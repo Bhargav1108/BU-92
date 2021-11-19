@@ -1,0 +1,85 @@
+
+what is Linux?
+
+ It's kernel distributed under an open source operating system, it's functionalities similar like unix, 
+ the kernerl is the heart of the linux os.
+
+ It's directly communicate with the hardware .
+ 
+  Advantages: 
+                -> It's easy to learn for beginners.
+                -> Being open source , anyone with programming knowledge can modify it.
+		-> A linux based server could run non-stop without rebooting for years.
+		-> Linux have more secured.
+ 		-> Once you installed we don't need any antivirus!.
+		-> user friendly when we know the commands .
+
+  Disadvantages: 
+
+		-> More difficult to find out the applications that supports.
+		-> One main issue is drivers , before install any hardware components you must check whether the
+		   drivers are present or not.
+		
+Types of shells in linux
+
+	c shell: 
+		-> this will allow users to write their shell scripts programs using a syntax similar to the 
+                c programming , it's known as "csh".
+	
+	Korn shell:
+		-> this shell merge the features of c shell and tc shell and bourne shell.
+		-> it has a ability to create new shell commands for using .
+		-> it's also known as "ksh".
+	
+	Bourne-Again shell:
+		-> It's the updated version of the bourne shell. 
+		-> It's mainly used shell in the open source community.
+		-> This syntax includes all the shells like c shell, bourne shell, tc shell, korne shell.
+		-> It's also called as "bash" shell.
+
+
+Types of Linux os:
+
+	1) Ubuntu: 
+		-> Linux distribution based bebian os.
+		-> it has offical editons added in this those are desktop , server and core .
+		-> which can either run on a computer or on a virtual machine .
+		-> it's a popular distributino among cloud based projects.
+
+	2) CentOS: 
+
+		-> It is distribution based on the source code.
+		-> it was launched in 2004 .
+		-> It's a safe bet for those who looking for a high-quality code.
+
+	3) Fedora:
+
+		-> Fedora Distribution is used for different cases. 
+		-> It is mainly used by enterprise-level users who also use the Red Hat Enterprise Linux or CentOS. 
+		-> Fedora provides more user-friendly experience then RHEL or CentOS. 
+		-> Fedora is also used for different projects like Web Servers, Database Servers, Proxy, VMs
+
+	3) Kali Linux:
+	
+		->  Kali Linux is mainly used by the Hackers and cyber attackers.
+		-> it is best for the advanced Penetration Testing and Security Auditing. 
+		-> Kali Linux is used by hackers because it is a free OS and
+ 			has over 600 tools for penetration testing and security analytics.
+		-> Kali contains several hundred tools which are geared towards various information security tasks, 
+			such as Penetration Testing, Security research, Computer Forensics and Reverse Engineering.
+
+		tool include like : NMAP , Aircrack-ng etc.
+
+	4) Parrot OS:
+
+		-> Parrot OS is the goto Operating System (OS).
+		-> nowadays because of its advanced GUI and functions which make it one of the best Linux based os to work with. 
+		-> It comes with more than 200+ tools and scripts that are useful in day to day work for Cyber Security professional. ... Parrot os is a highly polished operating system
+
+	5) Arch linux: 
+
+		-> It's designed for advanced users or linux experts who care about what is installed and the services are running.
+		-> it gives users the freedom to configures the system, to their preference. 
+		-> Arch is meant for users who really know th ins and outs of working with the linux.
+		-> It's good for the user who use daily basis.
+		
