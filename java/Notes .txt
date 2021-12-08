@@ -1,0 +1,451 @@
+ what is IDE? 
+
+ 1)Integrated Development Environment.
+ 2)it is software designed to perform all programming tasks in one application. 
+ 3)Main objective of an IDE is the central interface with all tools a developer needs 
+  including  code editor, compiler, debugger and build automation tools. 
+  
+------------------
+Java Environment: 
+
+It includes  compiler and JDK and JVM and JRE 
+
+==> JDK : (java development kit) (JVM + JRE)
+
+It includes the java development tools like compiler, debugger and documentation etc . 
+
+==> JRE : (java runtime environment ) 
+
+1) it includes the java libraries required run a java program .
+2) it is the subset of jdk
+
+==> JVM : (java virtual machine ) 
+
+1)JVM is abstract machine .
+2)it provides runtime environment in which java byte code can be executed. 
+
+suppose you have a " .class " file for a particular program then , 
+if you want to run a program in other computer at that time you don't have to compile again 
+you don't need any jdk in that machine , you need only " JVM " to run that file . 
+
+---------------------------------------------------------------------------------
+
+what is java ?
+
+==> java is high level , class based and object based programming language.
+==> it's a platform 
+		==> platform is nothing but any hardware or software environment in which a program runs, 
+		    java has a run time environment ( JRE ) and API , it's called a platform . 
+==> java is a technology 
+
+it includes 
+
+A) Java standard edition ( javaSE ):
+
+-> desktop applications or window based applications. these are traditional softwares that we need to install on every machine. 
+-> Examples : music palyer, chrome, notepad++ etc 
+
+
+B) Java Enterprise Edition ( javaEE ) : 
+
+-> web applications ==> application  that runs on the server side and create dynamic( client and server ) page is called a web application. 
+-> it also includes distributed in nature such as banking applications etc, 
+-> examples : flipkart, amazon , zomato  and load balancing , security etc. 
+
+
+C) Java Micro Edition ( javaME ) :
+
+-> An application which is created for the moblile devices is called micro edition .
+-> examples: android apps , embedded systems( washing machine ) etc. 
+
+------------------------------------------------------------------------------
+
+why we need java ? 
+
+--> java can be used to create complete applications that may run on a single computer or 
+    distributed among servers and clients in a network . 
+
+--> it's easy to write , compile and debug, 
+--> java is Object oriented programming.
+--> means this allows users to design programs in our own way and it's also provides reusable code. 
+--> it's a platform independent. 
+
+Platform Independent : 
+
+--> java source code is converted to byte code by the compiler then be executed on any platform like unix , mac os  by using JVM . 
+--> java is also known as WORA ( write once , run anywhere )bacause it's platform independent . 
+
+security :
+
+--> the byte-code verification done before execution takes palce, so program becomes unable to jump to a
+    malicious or undefined instructions .
+--> whenever the new code is loaded , run-time security checks takes place. 
+there are many features to make java secure  
+1) memory management 
+2) security management
+3) void of pointer :- there is no concept of pointers in java. 
+4) compile time checking 
+5) cryptographic security etc.
+
+
+Roubst:
+
+--> Roubstness is the capable of handling errors at run-time or during execution.
+--> it supports garbage collection and exception handling, and also utilizes stong memory management. 
+
+Internalization(I18N) :
+
+--> The process of desiging applications in such a way that which provides support for various countries
+    various languages and various currency automatically  whithout perform any changes in the application 
+	is called Internalization (I18N)
+	
+	example : Amazon 
+	
+	
+Class:
+-------
+1. Class is an imaginary thing (or blueprint) which describe the properties(variable) 
+    and behaviours(functions) of the real world objects
+2. Class is representation of similar kind of objects.
+3. Class is an user defined data type.
+ 
+Syntax for creating a class in Java?
+----------------------------------------
+ 
+<modifier> class <name> <extends> <implements>
+    {
+        //body of class
+    }
+ 
+e.g.:
+--------
+ class Animal
+    {
+        // members
+            a. static
+            b. instance
+    }
+ 
+member:
+------------
+1. variable(s)
+2. method(s)
+3. constructor(s)
+4. initializer block(s)
+5. inner class(es)
+ 
+public class Car
+{
+    int h;
+    int w;
+static    float wc;
+
+    void move(){}    
+static    void avg(){}
+ 
+}
+ 
+==========================================================================
+static members are associated with class or classname. these members are access by class name and object 
+ 
+instance members are associated with Objects. these members are only access by object , if you try to access with class name it will give error. 
+ 
+---------------------------------------------------------------------
+ 
+variable-> it's a name referencing variable that store the value of memory location
+ 
+
+== =============================================================
+How to create object for a Car class:
+========================================
+ 
+1. Object is a real world enity
+2. Object is an instance of a class.
+ 
+ 
+
+Syntax:
+-----------
+                <type>    <var> =    new <type>(<parameter)
+
+Example:
+------------
+        Car c1 = new Car();
+
+System.out.print(data); -> data
+ 
+System.out.println(data); -> data + \n (new line)
+ 
+Example:
+-------------
+  int i =10;
+
+SOP(i); // 10 -> value of variable
+SOP('i'); // i -> i is a char value
+SOP("i"); // i -> i is a string value
+SOP(10); // 10 -> 10 as  an int value
+SOP("10"); // 10 -> 10 as a string value
+SOP(2 * 5); // 10 -> 10 is evaluated value.
+ 
+--------------------------------------------------------------------
+ class A
+ {
+    ------
+    -----
+    static B v2;
+    ----
+    ------
+ }
+-------------------------
+ class B
+    {
+        void foo(){}
+    }
+--------------------------
+B v1 = new B();
+v1.foo();
+------------------
+ A.v2.foo();
+System.out.println();
+=====================================================================
+Operators:
+--------------
+1. Arithmetice Operators
+2. Reltional Operators
+3. Eqaulity operators
+4. String Concatenation
+5. Variable increment/decrement
+6. Logical
+7. Ternary.
+======================================================
+1. Arithmetice Operators
+    +, -, *, /, %
+ 
+example:
+----------
+    int a = 10;
+    int b = 3;
+
+    int c = a + b ; // 13 
+    int d = a - b ; // 7
+    int e = a * b ; // 30
+    int f = a / b ; // 3
+    int g = a % b ; // 1
+ 
+Extended Assignment operators:
+===================================
+ a = a + b ; ==> a += b;
+ a = a - b ; ==> a -= b;
+ a = a * b ; ==> a *= b;
+ a = a / b ; ==> a /= b;
+ a = a % b ; ==> a %= b;
+ 
+-------------------------------------
+Emample:
+------------------
+ 
+byte -> short -> int -> long -> float -> double
+ 
+    int i =10;
+    float f = 2.3F;
+    double d = 10.0;
+
+double    x = (i + f) * d;  // MAX(int, int, float, double )
+
+--------------------------------
+ 
+    byte b = 10;
+    short s= 15;
+
+int    y = b + s; //// MAX(int, byte, short )
+ 
+----------------------------------------------------------------------
+2. Relational Operators
+    <, >, <=, >=
+ 
+operands: numeric values
+result : boolean
+ 
+Example:
+-----------
+    int x =15;
+
+    boolean b = 10 < x < 20 ; //  true < 20 => C.E.
+ 
+
+3. Eqaulity operators
+    ==, !=
+
+operands: all type
+result : boolean
+ 
+    int i =10;
+    boolean b1 = i == 15; //false
+            b1 = b1 == false;  // true
+ 
+
+Car c1 = new Car();
+Car c2 = new Car();
+ 
+    boolean b2 = c1 == c2; //  false
+
+=========================================================================
+4. String Concatenation ('+')
+----------------------------------------
+    String s ="I love ";
+    String s2 = "JAVA";
+
+    String s3 = s1 + s2; // "I love JAVA"
+
+String    x = "20" + 10; // ==> "20" + "10" ==> "2010"
+ 
+=================================================================
+5. Variable increment/decrement
+-------------------------------------
+ 
+    ++ /--
+
+    pre/post
+ 
+                int x =10;
+     int y = ++x;// 11   | int y = x++; // 10
+
+------------------------------------
+    int i = ++5; // C.E.
+    SOP(i); // ---
+ 
+======================================================================
+ 
+6. Logical operator:
+--------------------------
+ &, |, ^, !
+ 
+A & B = A.B
+A | B = A + B
+ 
+        -        -
+A ^ B = A.B + A.B  => if both are same -> false otherwise true
+ 
+operands: boolean expr
+result : boolean
+ 
+Example:
+--------------
+    int x =15;
+
+    boolean b = (10 > x) & (x < 20) ; // false & true => false
+ 
+========================================================================
+    boolean b = (10 > x) && (x < 20) ; //false && (Not evaluated) => false
+ 
+  x = sqrt(Sin-1(log(57385 * 5753))) * 0 // 0
+-------------------------------------------
+7. Ternary.
+ 
+  <boolExpr> ? <expr1> : <expr2>
+
+Exmple:
+------------
+int a = ------;
+int b = ------;
+int c = ------;
+ 
+int max;
+
+    if(a>b)
+    {
+        max = a;
+    }
+    else{
+     max = b;
+    }
+ 
+SOP(max);
+ 
+-----------------------------------------------
+ 
+int a = ------;
+int b = ------;
+ 
+int max = a > b ? a : b;
+SOP(max);
+ 
+-------------------------------------------
+Array:
+-----------
+-> Array is a linear Data Structure.
+-> Arrays stores similar kind of data/elements
+-> In java arrays are Objects
+-> Array are fixed in size.
+-> Array are indexed and index starting from 0.
+-> In Java, array have an elemnet named length which contain size of an array.
+-> If we will use an invalid index we will get an exception(java.lang.ArrayIndexOutOfBoundsException)
+ 
+Syntax:
+-------------
+    <type>[] <var> = new <type>[ <size> ];
+    <type>[] <var> = {<values>};
+ 
+Example:
+----------
+        int[] arr = new int[3];
+ 
+        arr[0] = 99;
+        arr[1] = 45;
+        arr[2] = 78;
+ 
+        int[] arr2 = { 3, 13, 23 , 78, 45, 39};
+ 
+    
+    String[] names= new String[5];
+ 
+---------------------------------------
+ 
+function/method:
+-----------------
+syntax :
+--------------
+<modifier> <returnType> <name>(<parameters>) <throws>
+{
+    //body
+}
+ 
+Example:
+------------
+ void foo()
+    {
+    }
+ 
+=====================================
+Method overloding:
+----------------------
+ 
+In a java class we dont have duplicate methods( same name and same parameters).
+ 
+But in a java class we have 2 or more than 2 methods having same name but different parameter list.
+    this process is called method overloadinga nd mehods called overloaded methods
+
+If name are same, then it should be different:
+    1. number of parameters
+    2. data type
+    3. order of parameter
+ 
+-> There is no impact of return type in method overloading
+ 
+------------------------------------------------------------------------
+Constructor:
+--------------
+-> Constructors are special members of a class. they are similar to the methods.
+ 
+-> it is used to construct initial state of an object.
+ 
+-> Rules for creating constructor:
+    Name of constructor must be same as name of its class
+    only access modifier is permissible
+    no return type even void
+ 
+
+-> Every Java class must have atleast one constructor.
+-> If developer not created a constructor,
+    compiler will insert a default constructor with same accessbility of that class
+
