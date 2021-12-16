@@ -449,3 +449,813 @@ Constructor:
 -> If developer not created a constructor,
     compiler will insert a default constructor with same accessbility of that class
 
+---------------------------------------------
+Access modifier:
+------------------
+private -> default -> protected -> public
+ 
+public
+protected
+default
+private 
+ 
+---------------------------------------------------------------------
+ 
+public: it can be accessible from anywhere.
+ 
+protected: Within its package, it can be outside through inheritance
+deafult: Only Within its package.
+ 
+private: Only within its class. (Reflection API)
+ 
+-------------------------------------------------------------
+Other Modifier:
+--------------------
+static
+final
+abstract
+native
+transient
+synchronized
+volatile
+strictfp
+ 
+-------------------------------------------------------------------------------
+final keyword:(used with class, method and variables (local variable too))
+---------------------------------------------------------------------------
+We can use final with member as wel as local variables.
+ 
+final variable: (final + variable = constant)
+--------------------
+Cannot reassign the variable.
+ 
+
+final class: 
+--------------------
+No class can inherit final class.
+ 
+final method: 
+--------------------
+final method cannot be overridden
+ 
+===========================================================================
+abstract keyword:(used with class and method)
+---------------------------------------------
+abstract method: method without body
+-------------------
+ 
+public class A {
+ 
+    //concrete method
+    void m1() {
+    }
+ 
+   //abstract method
+    abstract void m2();
+ 
+}
+-----------------------------------
+abstract class: restrict its intanciation. (We cannot create object of abstract class)
+------------------
+Marzi:
+=========
+ 
+ abstract public class B {
+        void foo()
+        {}
+    }
+ 
+---------------------------------------
+Majboori:
+============
+ 
+abstract public class B {
+
+        void m1(){}
+        abstract void foo();
+
+    }
+ 
+------------------------------------------------------------------
+ public class Animal    
+    {
+         void eat(){
+            sop("Animal is eating");
+         }
+    }
+---------------------------------------------
+public class Lion extends Animal 
+{
+ 
+}
+-----------------------------------
+public class Cow extends Animal  
+{
+ 
+}
+--------------------------------------
+public class Crow extends Animal  
+{
+
+}
+------------------------------------------------------
+ 
+native
+====================
+public class A
+{
+ 
+    abstract void m1(); // OK -> sub classes.
+ 
+    native   void m2(); // OK -> another programming lnguage code C/C++/Python....
+ 
+}
+========================================================
+transient: transient varaibles are not saved during serialization
+-------------------------------------------------------------------
+ 
+class Employee{
+ 
+int id;
+String name;
+int age;
+traisient double salary;
+ 
+
+}
+------------------------------------------------------------------
+synchronized: (used with method and block)
+---------------: 
+ 
+synchronized void bathRoom(){
+    //bathing
+    //washing
+}
+=============================================================
+voltile: is used with variable
+---------------------------------
+ 
+volatile int i =10; 
+ 
+JVM will not cache i.
+ 
+thread-1 -> no copy of i ->  i=15 
+thread-2 -> no copy of i -> i=20
+ 
+===========================================================================
+Inheritance:(IS-A)
+--------------------
+It is a way of Code reusability.
+ 
+------------------------------------------------
+    Person
+      ^
+      |
+      |  IS-A
+      |
+    Employee
+---------------------------------------
+ 
+public class Person
+{
+     void eat(){}
+     void sleep(){}
+}
+ 
+public class Employee extends Person
+{
+    void doWork(){}
+}
+--------------------------------------------------------------
+sub/child/drived class  -> super/parent/base class
+ 
+class Dog {
+}
+ 
+public class Employee
+{ 
+    Dog dog; //HAS-A (aggregation)
+
+    void doWork(){}
+}
+ 
+------------------------------------
+types of Inheritance:
+--------------------------
+1. Single
+2. Multiple
+ 
+==========================
+3. Multi-level
+4. hybrid
+5. hierarchical
+ 
+
+example:
+----------
+ 
+1. B -> A  (B inherits A)
+ 
+
+2. C -> B and C -> A (C have 2 parent classes)
+ 
+3. C -> B -> A
+ 
+4. xyz
+5. Xyz
+ 
+---------------------------------------------------------------------
+Java supports single inheritance using classes.
+---------------------------------------------------------
+Object:
+--------------
+int hashCode()
+String toString()
+boolean equals(Object)
+Object clone() throws CloneNotSupportedException
+Class getClass()
+void finalize()
+----------------------------------------------------------------------------------
+
+The clone() Method:
+----------------------------------------------------------------------------------
+
+If a class, or one of its superclasses, implements the Cloneable interface, you can use the clone() method to create a copy from an existing object. To create a clone, you write:
+
+aCloneableObject.clone();
+Object's implementation of this method checks to see whether the object on which clone() was invoked implements the Cloneable interface. If the object does not, the method throws a CloneNotSupportedException exception. Exception handling will be covered in a later lesson. For the moment, you need to know that clone() must be declared as
+
+protected Object clone() throws CloneNotSupportedException
+or:
+
+public Object clone() throws CloneNotSupportedException
+if you are going to write a clone() method to override the one in Object.
+
+If the object on which clone() was invoked does implement the Cloneable interface, Object's implementation of the clone() method creates an object of the same class as the original object and initializes the new object's member variables to have the same values as the original object's corresponding member variables.
+
+The simplest way to make your class cloneable is to add implements Cloneable to your class's declaration. then your objects can invoke the clone() method.
+
+For some classes, the default behavior of Object's clone() method works just fine. If, however, an object contains a reference to an external object, say ObjExternal, you may need to override clone() to get correct behavior. Otherwise, a change in ObjExternal made by one object will be visible in its clone also. This means that the original object and its clone are not independent—to decouple them, you must override clone() so that it clones the object and ObjExternal. Then the original object references ObjExternal and the clone references a clone of ObjExternal, so that the object and its clone are truly independent.
+
+-------------------------------------------------------------------
+The equals() Method:
+--------------------------------------------------
+The equals() method compares two objects for equality and returns true if they are equal. The equals() method provided in the Object class uses the identity operator (==) to determine whether two objects are equal. For primitive data types, this gives the correct result. For objects, however, it does not. The equals() method provided by Object tests whether the object references are equal—that is, if the objects compared are the exact same object.
+
+To test whether two objects are equal in the sense of equivalency (containing the same information), you must override the equals() method. Here is an example of a Book class that overrides equals():
+
+public class Book {
+    String ISBN;
+    
+    public String getISBN() { 
+        return ISBN;
+    }
+    
+    public boolean equals(Object obj) {
+        if (obj instanceof Book)
+            return ISBN.equals((Book)obj.getISBN()); 
+        else
+            return false;
+    }
+}
+Consider this code that tests two instances of the Book class for equality:
+
+// Swing Tutorial, 2nd edition
+Book firstBook  = new Book("0201914670");
+Book secondBook = new Book("0201914670");
+if (firstBook.equals(secondBook)) {
+    System.out.println("objects are equal");
+} else {
+    System.out.println("objects are not equal");
+}
+This program displays objects are equal even though firstBook and secondBook reference two distinct objects. They are considered equal because the objects compared contain the same ISBN number.
+
+You should always override the equals() method if the identity operator is not appropriate for your class.
+
+Note: If you override equals(), you must override hashCode() as well.
+------------------------------------------------------------------
+The finalize() Method:
+------------------------------------------------------------------
+The Object class provides a callback method, finalize(), that may be invoked on an object when it becomes garbage. Object's implementation of finalize() does nothing—you can override finalize() to do cleanup, such as freeing resources.
+
+The finalize() method may be called automatically by the system, but when it is called, or even if it is called, is uncertain. Therefore, you should not rely on this method to do your cleanup for you. For example, if you don't close file descriptors in your code after performing I/O and you expect finalize() to close them for you, you may run out of file descriptors.
+--------------------------------------------------------------------
+The getClass() Method:
+-------------------------------------------------------------------
+You cannot override getClass.
+
+The getClass() method returns a Class object, which has methods you can use to get information about the class, such as its name (getSimpleName()), its superclass (getSuperclass()), and the interfaces it implements (getInterfaces()). For example, the following method gets and displays the class name of an object:
+
+void printClassName(Object obj) {
+    System.out.println("The object's" + " class is " +
+        obj.getClass().getSimpleName());
+}
+The Class class, in the java.lang package, has a large number of methods (more than 50). For example, you can test to see if the class is an annotation (isAnnotation()), an interface (isInterface()), or an enumeration (isEnum()). You can see what the object's fields are (getFields()) or what its methods are (getMethods()), and so on.
+-------------------------------------------------------------------------------------------
+The hashCode() Method:
+-------------------------------------------------------------------------------------------
+The value returned by hashCode() is the object's hash code, which is an integer value generated by a hashing algorithm.
+
+By definition, if two objects are equal, their hash code must also be equal. If you override the equals() method, you change the way two objects are equated and Object's implementation of hashCode() is no longer valid. Therefore, if you override the equals() method, you must also override the hashCode() method as well.
+
+------------------------------------------------------------------------------------------
+The toString() Method:
+------------------------------------------------------------------------------------------
+You should always consider overriding the toString() method in your classes.
+
+The Object's toString() method returns a String representation of the object, which is very useful for debugging. The String representation for an object depends entirely on the object, which is why you need to override toString() in your classes.
+
+You can use toString() along with System.out.println() to display a text representation of an object, such as an instance of Book:
+
+System.out.println(firstBook.toString());
+
+================================================================================
+Method Overloading | Compile time polymorphism | static polymorphism | early polymorphism 
+======================
+class Abc
+{
+    void greet(){
+        SOP("Hello Guest");
+    }
+    void greet(String name){
+        SOP("Hello "+ name);
+    }
+}
+ 
+
+Method Overriding | run time polymorphism | dynamic polymorphism | late polymorphism 
+ 
+class Parent
+    {
+        void sayHello(){
+            SOP("Namaste....");
+        }
+    }
+ 
+class Child extends Parent
+    {
+        void sayHello(){
+            SOP("Hi dudy...");
+        }
+    }
+====================================================
+Child obj = new Child();
+    obj.sayHello();// Hi dudy...
+ 
+=======================================================================
+Rules from method overriding: (private and static method dosent take participation in Method overriding)
+----------------------------------------------------------------------------------------------------------
+1. Method name and parameter must be same.
+2. For accessbility, it can be widen. (private -> default -> protected -> public)
+3. Return type:
+    if primitive -> leave as it is.
+    if Reference -> same or it can be a sub class. (Co-Variant type)
+ 
+4. In throws , narrowing will be happen.
+ 
+==========================================================================================
+ 
+Object:
+--------------
+int hashCode()
+String toString()
+boolean equals(Object)
+Object clone() throws CloneNotSupportedException
+Class getClass()
+void finalize()
+=============================================================
+int hashCode():
+----------------------
+-> JVM will assign an unique ID to every object. This id is called hash code.
+-> this method is used in Collection Framework
+ 
+Car c1= new Car();
+int h1= c1.hashCode();
+ 
+Car c1= new Car();
+int h2= c2.hashCode();
+ 
+SOP(h1 == h2); //
+---------------------------------------------------------------------
+String toString(): its returns String representation of custom objects.
+---------------------------------------------------------------------------
+boolean equals(Object):
+----------------------------
+        Employee e1 = new Employee();
+        e1.setAge(35);
+        e1.setName("Shad");
+        e1.setSalary(1234);
+ 
+        Employee e2 = new Employee();
+        e2.setAge(36);
+        e2.setName("Shad");
+        e2.setSalary(1234);
+ 
+        boolean b1 = e1 == e2; // Reference equality
+        System.out.println(b1);
+ 
+        boolean b2 = e1.equals(e2); // Object equality
+        System.out.println(b2);
+------------------------------------------------------------------------
+protected native Object clone() throws CloneNotSupportedException :
+-------------------------------------------------------------------------
+deep cloning
+*)shallow cloning
+-----------------------------------------------------
+package p1;
+ 
+public class Employee implements Cloneable{
+ 
+    private String name;
+    private int age;
+    private float salary;
+ 
+    public String getName() {
+        return name;
+    }
+ 
+    public void setName(String name) {
+        this.name = name;
+    }
+ 
+    public int getAge() {
+        return age;
+    }
+ 
+    public void setAge(int age) {
+        this.age = age;
+    }
+ 
+    public float getSalary() {
+        return salary;
+    }
+ 
+    public void setSalary(float salary) {
+        this.salary = salary;
+    }
+ 
+    @Override
+    public String toString() {
+        return "Employee [name=" + name + ", age=" + age + ", salary=" + salary + "]";
+    }
+ 
+    @Override
+    public boolean equals(Object obj) {
+ 
+        Employee e1 = this;
+        Employee e2 = (Employee) obj;
+ 
+        return e1.getAge() == e2.getAge();
+    }
+ 
+    @Override
+    public Employee clone() throws CloneNotSupportedException {
+        return (Employee) super.clone();
+    }
+ 
+}
+----------------------------
+ 
+package p1;
+ 
+public class Test2 {
+ 
+    public static void main(String[] args) throws CloneNotSupportedException {
+ 
+        Employee e1 = new Employee();
+        e1.setAge(35);
+        e1.setName("Shad");
+        e1.setSalary(1234);
+ 
+        // Duplicate/Clone of e1
+        Employee e2 = new Employee();
+        e2.setAge(e1.getAge());
+        e2.setName(e1.getName());
+        e2.setSalary(e1.getSalary());
+
+        Employee e3 = e1.clone();
+
+        System.out.println(e1);
+        System.out.println(e3);
+ 
+    }
+ 
+}
+ 
+==================================================================================
+ public final native Class<?> getClass();
+
+ public static void main(String[] args) throws InstantiationException, IllegalAccessException {
+ 
+        Employee e1 = new Employee();
+ 
+        e1.setAge(35);
+        e1.setName("Shad");
+        e1.setSalary(1234);
+ 
+        Class clazz = e1.getClass();
+        Employee e4 = (Employee) clazz.newInstance();
+ 
+    }
+=======================================
+void finalize()
+--------------------
+===========================================================================
+Interface:
+-------------
+Interface is an user defined data type.  Interface support Multiple inheritance.
+ 
+interface I
+    {
+        public abstract void f1();
+                        void f2();
+
+        public static final    int i=10;
+                            int j =15;
+    }
+ 
+Class:
+----------
+class is an user defined data type. Class support Single inheritance
+ 
+
+abstract class A
+{
+ 
+    int i=10;
+
+ void m1(){}// Concreate  
+ abstract void m2(); //Abstract
+ 
+}
+ 
+------------------------------------------------------
+ 
+1) class extends class
+2) interface extends interface
+ 
+3) class implements interface
+4) interface extends class  -> Not possible
+ 
+*) interface always super type
+=================================================================================
+Assignment:
+----------------
+New features relAted to interface in Java8:
+---------------------------------------------------
+1. Functional interface:
+-------------------------------
+-> An interface who have only one abstract method, called Functional interface.
+ 
+Example:
+---------
+java.lang.Runnable
+java.util.concurrent.Callable
+java.util.function.Function
+java.util.function.Predicate
+java.util.function.Consumer
+java.util.function.BiConsumer
+ 
+@FunctionalInterface
+public interface Flyable {
+ 
+    void fly();
+ 
+//    void foo();
+ 
+    default public void greet() {
+ 
+        System.out.println("Hello Functional programming");
+    }
+ 
+    static public void sayBye() {
+ 
+        System.out.println("Likal lo, Bahut tezi se....");
+    }
+ 
+}
+------------------------------------------------------------------
+Marker Interface: interface having empty body.
+------------------------------------------------
+java.lang.Clonable
+java.io.Serializable
+ 
+================================================================
+Packages in Java:
+------------------
+hospital
+    |- A.java, B.java
+    |-doctor
+        |- C.java, D.java
+        |-cardio
+            |- E.java
+        |-ent
+            |- F.java
+    |-patient
+        |- G.java, H.java
+        |- indoor
+            |-I.java
+    |-staff
+        |---
+        ----
+        ----
+----------------------------------------------------
+package hospital;
+puclic class A
+{}    
+-----------------------    
+package hospital.doctor.cardio;
+public class E
+{
+}
+--------------------------------------------------------
+1. compile time error | Syntax error
+2. Runtime errors | exceptions
+3. Logical errors
+ 
+------------------------------------------------------------------
+Exception Handling:
+-----------------------
+-> Exceptions are runtime errors.
+-> Exceptions are unwanted/Mishapping situations.
+-> In java exceptions are Objects derived from Throwable class.
+ 
+        try {
+            //risky code
+        } catch (Exception e) {
+            //action against exception raised in its try block. 
+        } finally {
+            //free the resources/cleanup code.
+        }
+ 
+=================================================================
+throws clause:
+--------------
+Exception can be divide into two category:
+------------------------------------------
+1. unchecked exception
+2. checked exception
+ 
+-------------------------------------------------------------------------
+throw:
+--------------
+Custom Exception:
+----------------------------
+ 
+public clsss MyException extends Exception
+{
+    MyException(String reason){
+        super(reason)
+    }
+}
+ 
+---------------------------------------------------------------
+byte -> Byte
+short -> Short
+int -> Integer
+long -> Long
+ 
+flaot -> Float
+double -> Double
+ 
+boolean -> Boolean
+char -> Character
+ 
+void -> Void
+ 
+------------------------------------
+1. To finid minimum and maximum ranges:
+------------------------------------------
+ 
+//System.out.println(int.MIN_VALUE); --> Compile time error    
+System.out.println(Integer.MIN_VALUE); -2147483648
+ 
+2. How to convert number into String:
+-------------------------------------------
+   int i =10;
+
+    String s1 = i + "";
+    System.out.println(s1);
+
+    String s2 = String.valueOf(15);
+    System.out.println(s2);
+ 
+3. Convert String into numric data type:
+---------------------------------------------
+    String s ="101";
+
+    int x = s;
+ 
+
+  parseXXX(String)
+  
+===============================================
+12/13/2021 :
+-------------------
+
+Difference Between Array and ArrayList
+=============================================================
+
+Array : 
+
+ 1)Array stores a fixed number of elements. The size of an Array must be specified at the time of initialization.
+ 2)Array is strongly typed, This means that an array can store only specific type of items\elements.
+ 3)Arrays can contain both primitive data types or objects of a class as the array elements. 
+ 4)All kinds of Array provides length variable which denotes the length of Array 
+ 
+ArrayList :
+ 
+ 1)ArrayList doesn't contain any fixed length it has a varible length.
+ 2)while ArrayList provides size() method to calculate the size of ArrayList in Java.
+ 3)But ArrayList can contain only objects of a class. It can not have primitive data types as its elements.
+ 4)ArrayList can store any kind of data like strings ,float , interger etc. 
+
+---------------------------------------------------------------------------------------
+
+Difference Between ArrayList and LinkedList and Vector 
+
+========================================================================================
+
+They all implement List interface. They are very similar to use. 
+Their main difference is their implementation which causes different performance for different operations.
+
+ArrayList: 
+
+    -> ArrayList is implemented as a resizable array. 
+	-> As more elements are added to ArrayList, its size is increased dynamically. 
+	-> It's elements can be accessed directly by using the get and set methods, since ArrayList is essentially an array.
+	-> while arrayList is not synchronized, which means multiple threads can work on arrayList at the same time.
+
+LinkedList:-
+
+   -> LinkedList is implemented as a double linked list. 
+   -> LinkedList is faster being node based as not much bit shifting required.
+   -> Its performance on add and remove is better than Arraylist, but worse on get and set methods.
+   -> LinkedList, also implements Queue interface which adds more methods than ArrayList and Vector, such as offer(), peek(), poll(), etc.
+	
+Vector :-
+
+   -> vector is similar with ArrayList, but it is synchronized.
+   -> which means only one thread at a time can access the code,
+   -> ArrayList is a better choice if your program is thread-safe. 
+   -> Vector and ArrayList require more space as more elements are added. 
+   -> Vector each time doubles its array size, while ArrayList grow 50% of its size each time.
+   
+--------------------------------------------------------------------------------------------------------
+
+Difference Between TreeSet and HashSet or TreeMap and HashMap
+
+=============================================================================================
+
+TreeSet: 
+
+1) Elements are sorted in ascending order by default in TreeSet.
+2) Treeset doesn't stroe null values ,If one try to store null object in TreeSet object , it will throw Null Pointer Exception.
+3) TreeSet guarantees log(n) time cost for the basic operations (add,remove,contains).
+4) TreeSet uses compareTo() method for maintaining ordering .
+5) TreeSet uses Red- Black tree algorithm underneath to sort out the elements. 
+6) When one need to perform read/write operations frequently , then TreeSet is a good choice.
+7) HashSet and TreeSet both are not synchronized or not thread safe.HashSet and TreeSet, both implementations are not synchronized.
+
+HashSet: 
+
+1) Ordering of HashSet stores the object in random order . 
+2) There is no guarantee that the element we  inserted first in the HashSet  will be printed first in the output .
+3) HashSet can store null objects.
+4) HashSet is much faster than TreeSet.
+5) HashSet uses equals() method for comparison in java.
+6) Since HashSet and TreeSet both implements Set interface . 
+7) Both are allowed to store only unique elements in their objects.
+8) Thus there can never be any duplicate elements inside the HashSet and TreeSet objects.
+====================================================================================================
+
+12/14/2021
+
+sorting the arrays and collection frame work :- 
+======================================================
+
+In any data structure like array and arraylist and set  the similar kind of data sorting is easy . 
+
+In java Arrys provides sort() method to sort the keys 
+
+if you want to sort the array just use arrayname.sort() 
+
+if you use sort method with list then it's  not directly possible so you must use 
+
+Collections.sort(object);
+
+in sets there is a interface sortingset then we have class TreeSet , we can use that class when we declared . 
+then it automatically sort the values , don't need to use sort() method . 
+
+================================================================================
+
+if we have some employee data which contains emp_id, emp_age,emp_name,emp_salary like that 
+
+then it's not possible to do with the sort method ,it's possible but you have to implement some interface
+
+objects can't be sorted because they don't know other object size so they can't sort 
+
+if you want to sort then use have to implement Comparable interface and then override the compareTo method 
+then it compare to objects and and also use sort method along with it . 
+
+===============================================================================================

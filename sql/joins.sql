@@ -1,23 +1,29 @@
-insert into student(Name,Address,Phone,Age)values("Harsh","Delhi",1234567895,18);
-insert into student(Name,Address,Phone,Age)values("Pratik","Bihar",9963543276,19);
-insert into student(Name,Address,Phone,Age)values("Priyanka","Bangalore",8097567320,120);
-insert into student(Name,Address,Phone,Age)values("Deep","Mumbai",6056789043,28);
-insert into student(Name,Address,Phone,Age)values("Durga","Noida",8045678901,38);
-insert into student(Name,Address,Phone,Age)values("Pritam","Puri",6347890235,18);
-insert into student(Name,Address,Phone,Age)values("Amit","Lucknow",9912746293,22);
-insert into student(Name,Address,Phone,Age)values("Naveen","Pune",8097456240,27);
-insert into student(Name,Address,Phone,Age)values("Bhargav","Visakhapatnam",9078905672,32);
+use boot_camp;
+create table student (
+roll_no int not null, 
+name char(200),
+mob_no varchar(35), 
+primary key(roll_no)
+);
+insert into student values(1,'Rohit','9868475732 , 9489285980');
+insert into student values(2,'Ajay','7890567365');
+insert into student values(3,'Raj','7893532232');
+insert into student values(4,'Durga','6309876543');
+insert into student values(5,'Neha','1234567845');
+insert into student values(6,'Madhu','9986743210');
+insert into student values(7,'Bhargav','9868475732 , 9489285980');
+select * from student ;
+delete from student where roll_no=1;
 
-select student.Roll_No,student.Name,student.Address,studentcourse.Course_Id from studentcourse INNER JOIN student where student.Age>=25;
+# to execute the procedure 
 
-select student.Roll_No,student.Name,student.Address,studentcourse.Course_Id from studentcourse LEFT JOIN  student ON student.Roll_No=studentcourse.Roll_No
+set @var=0;
+call boot_camp.new_procedure(@var);
+select @var;
+ use boot_camp;
+ 
+ select boot_camp.newfunction(@var);
+ use ticket;
+ select * from ticket;
 
-select student.Roll_No,student.Name,student.Address,studentcourse.Course_Id from student RIGHT JOIN  studentcourse ON studentcourse.Roll_No=student.Roll_No;
 
-select student.Roll_No,student.Name,student.Address,studentcourse.Course_Id from studentcourse LEFT JOIN  student ON student.Roll_No=studentcourse.Roll_No
-Union all 
-select student.Roll_No,student.Name,student.Address,studentcourse.Course_Id from student RIGHT JOIN  studentcourse ON studentcourse.Roll_No=student.Roll_No;
-
-select student.Roll_No,student.Name,student.Address,studentcourse.Course_Id,student.Age from student CROSS JOIN studentcourse;
-
-select s1.Name,s2.Address, s2.Age, s1.Course_Id from student s1, student s2 where s1.Roll_No=s2.Roll_No;
