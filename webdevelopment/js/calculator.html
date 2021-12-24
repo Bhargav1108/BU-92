@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculatior</title>
+    <script>
+    
+        function addition(){
+            
+            var first=Number(document.getElementById("first").value);
+            var second=Number(document.getElementById("second").value);
+            var add=first+second;
+            window.alert("addition:"+   add);
+
+        }
+        function Substraction(){
+            
+            var first=Number(document.getElementById("first").value);
+            var second=Number(document.getElementById("second").value);
+            var sub=first - second;
+            window.alert("substraction:"+   sub);
+
+        }
+        function Multiplication(){
+            
+            var first=Number(document.getElementById("first").value);
+            var second=Number(document.getElementById("second").value);
+            var mul=first * second;
+            window.alert("Multiplication :"+     mul);
+
+        }
+        function Division(){
+            
+            var first=Number(document.getElementById("first").value);
+            var second=Number(document.getElementById("second").value);
+            var div=first / second;
+            window.alert("Division:"+   div);
+
+        }
+
+
+
+    </script>
+</head>
+<body>
+    
+    <label>First Number:</label> <input type="number" id="first" name="first" placeholder="First Number" required> 
+    <br>
+    <br>
+    <label>First Number:</label> <input type="number" id="second" name="second" placeholder="First Number" required>
+    <br>
+    <br>
+    <input type="button"  value="Additon" onclick="addition()">
+    <input type="button"  value="Substraction" onclick="Substraction()">
+    <input type="button"  value="Multiplication" onclick="Multiplication()">
+    <input type="button"  value="Division" onclick="Division()">
+
+
+
+
+
+
+</body>
+</html>

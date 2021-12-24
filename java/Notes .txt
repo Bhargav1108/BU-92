@@ -1259,3 +1259,37 @@ if you want to sort then use have to implement Comparable interface and then ove
 then it compare to objects and and also use sort method along with it . 
 
 ===============================================================================================
+Dot notaion vs square bracket notation for accessing:
+=====================================================
+
+Dot notation is faster to write and clearer to read.
+Square bracket notation allows access to properties containing special characters and selection of properties using variables
+
+When using a dot, the part after the dot must be a valid variable name, and it directly names the property.
+When using square brackets, the expression between the brackets is evaluated to get the property name.
+
+While value.x fetches the property of value named “x”, value[x] tries to evaluate the expression x and uses the result as the property name.
+square bracket notation allows the use of characters that can't be used with dot notation.
+==============================================================================================
+
+Difference between var , let and const:
+=======================================
+var keyword in JavaScript: 
+=============================
+The var is the oldest keyword to declare a variable in JavaScript. Scope: Global scoped or function scoped.
+The scope of the var keyword is the global or function scope. It means variables defined outside the function can be accessed globally,
+and variables defined inside a particular function can be accessed within the function.
+
+
+let keyword in JavaScript: 
+==============================================
+The let keyword is an improved version of the var keyword.
+Scope: block scoped: The scope of a let variable is only block scoped. It can’t be accessible outside the particular block ({block}).
+
+
+
+const keyword in JavaScript:
+============================================================ 
+The const keyword has all the properties that are the same as the let keyword, except the user cannot update it.
+Scope: block scoped: When users declare a const variable, they need to initialize it, otherwise, it returns an error. The user cannot update
+the const variable once it is declared.
