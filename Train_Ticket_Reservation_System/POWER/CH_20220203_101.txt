@@ -1,0 +1,19 @@
+PNR : CH_20220203_101
+
+Train Number : 10010
+
+Train Name : Howrah SF Express
+
+From : Chennai
+
+To : Howrah
+
+Date : 2022-02-08
+
+Passengers:
+
+S.no 	  Name		Age 	Gender	Fare
+
+ 1   	BHARGAV	 22 	 M	 200
+
+ Total Fare = 200
