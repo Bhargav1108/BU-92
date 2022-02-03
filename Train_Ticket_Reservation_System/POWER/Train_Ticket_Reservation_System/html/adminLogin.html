@@ -16,7 +16,7 @@
         crossorigin="anonymous"></script>
 
     <style>
-        .divider:after,
+.divider:after,
         .divider:before {
             content: "";
             flex: 1;
@@ -73,9 +73,9 @@
                                     <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot
                                             password?</a></p>
 
-                                    <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+                                            <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
 
-                                </div>
+                                  </div>
                             </div>
                         </div>
                     </div>
@@ -87,33 +87,8 @@
     </form>
 
     <div class="footer">
-
+    
     </div>
-
-
-    <script>
-
-    function adminlogin(){
-        let url = 'http://localhost:9191/api/adminlogin';
-
-        async function callApi() {
-    let response = await fetch(url);
-    let data = await response.json();
-    console.log(data);
-   // adminVerify(data)
-        }
-
-       /* function adminVerify(data) {
-
-            const obj = [];
-            for (let i in data) {
-                obj.push(data[i]);
-            }
-            console.log(obj);
-        }*/
-    }
-
-    </script>
 </body>
 
 </html>

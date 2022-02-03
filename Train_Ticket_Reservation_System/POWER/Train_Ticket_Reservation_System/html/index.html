@@ -30,8 +30,18 @@
 
 
         .imgcontainer {
-            text-align: left;
-            margin: 10px 0 12px 0;
+            text-align: center;
+            background-color: #10002b;
+            color: #f8f9fa;
+            width: 100vw;
+            /* border-radius: 20px; */
+            text-align: center;
+            margin: auto;
+            
+        }
+        .imgcontainer img{
+            height: 80px;
+            padding: 5px;
         }
 
         /*set image properties*/
@@ -41,25 +51,85 @@
             border-radius: 25%;
         }
         body {
-      background-image: url("train7.jpg");
-
+      /* background-image: url("train7.jpg"); */
+      background-image: linear-gradient(#f1c0e8,#d8f3dc);
       background-repeat: no-repeat;
       background-size: cover;
     }
 
-        footer {
-            margin-top: 700px;
+footer{
+    width:100vw;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    border: 8px solid #212529;
+    background-color: #212529;
+}
 
-        }
+marquee{
+    font-weight: 800;
+    word-spacing: 10px;
+    letter-spacing: 4px;
+}
+
+.sec div {
+  height: 230px;
+  width: 480px;
+  margin: auto;
+}
+
+sec{
+  perspective: 600px;
+}
+
+
+.side-a,
+.side-b {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.side-a {
+  background-color: palevioletred;
+  z-index: 1;
+}
+.side-b {
+  background-color: #212529;
+  transform: rotateY(180deg);
+  padding: 16px;
+  color: #f8f9fa;
+}
+
+.side-b h2 {
+  text-align: center;
+}
+
+.side-a img {
+  height: 230px;
+  width: 480px;
+}
+
+.wrap {
+  transition: .5s;
+  transform-style: preserve-3d;
+}
+
+.wrap:hover {
+  transform: rotateY(180deg);
+  cursor: pointer;
+}
+
+
     </style>
 
 </head>
 
 <body>
     <div class="imgcontainer">
-        <h1><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/45/IRCTC_Logo.svg/1200px-IRCTC_Logo.svg.png" alt="Avatar" class="avatar">
+        <h1><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBxdfspOmjhs7FGLF3d1XuSwqa9yJYuVK_Zg&usqp=CAU" alt="Avatar" class="avatar">
             Indian Railway Catering and Tourism Corporation</h1>
     </div>
+    <marquee behavior="" direction="">WELCOME TO INDIAN RAILWAYS</marquee>
     <form class="container" action="admin.html">
 
         <section class="vh-80 gradient-custom">
@@ -68,8 +138,13 @@
                     <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                         <div class="card bg-dark text-white" style="border-radius: 1rem;">
                             <div class="card-body p-5 text-center">
-                                    <a class="btn btn-outline-light btn-lg px-5"  href="registration.html" role="button">Registration</a>
-                                    <a class="btn btn-outline-light btn-lg px-5"  href="login.html" role="button">Login</a>
+                                    <a class="btn btn-outline-light btn-lg px-5"  href="registration.html" role="button">User Registration</a>
+                                    <br>
+                                    <br>
+                                    <a class="btn btn-outline-light btn-lg px-5"  href="login.html" role="button">User Login</a>
+                                    <br>
+                                    <br>
+                                    <a class="btn btn-outline-light btn-lg px-5"  href="adminLogin.html" role="button">Admin Login</a>
 
                                   </div>
                             </div>
@@ -79,12 +154,44 @@
             </div>
         </section>
 
-
     </form>
 
-    <div class="footer">
-    
-    </div>
+        <footer>
+            <section class="sec">
+                <div class="wrap">
+                    <div class="side-a">
+                        <img src="./tomas-anton-escobar-PHyF2mCMei0-unsplash.jpg" alt="">
+                    </div>
+                    <div class="side-b">
+                        <h2>Bullet Trains</h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et modi atque laudantium illo eveniet, ipsum quas ipsa dignissimos nulla aliquam aperiam neque voluptatum non unde distinctio facilis fugit praesentium at.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="sec">
+                <div class="wrap">
+                    <div class="side-a">
+                        <img src="./train8.jpg" alt="">
+                    </div>
+                    <div class="side-b">
+                        <h2>Premium Trains</h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et modi atque laudantium illo eveniet, ipsum quas ipsa dignissimos nulla aliquam aperiam neque voluptatum non unde distinctio facilis fugit praesentium at.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="sec">
+                <div class="wrap">
+                    <div class="side-a">
+                        <img src="./train7.jpg" alt="">
+                    </div>
+                    <div class="side-b">
+                        <h2>Vintage Trains</h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et modi atque laudantium illo eveniet, ipsum quas ipsa dignissimos nulla aliquam aperiam neque voluptatum non unde distinctio facilis fugit praesentium at.</p>
+                    </div>
+                </div>
+            </section>
+        </footer>
+
 </body>
 
 </html>

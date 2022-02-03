@@ -15,6 +15,7 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
 
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <style>
         .divider:after,
         .divider:before {
@@ -32,6 +33,26 @@
             background-color: red;
             color: white;
             text-align: center;
+        }
+        h1{
+            background-color: #0b090a;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 2.5rem;
+            padding: 20px;
+        }
+        h4{
+            background-color: #0b090a;
+            color: white;
+            border: 3px solid purple;
+            padding: 10px;
+            border-radius: 30px 30px 0px 0px;
+            font-weight: 700;
+        }
+        label{
+            width: 60px;
+        }
+        button{
 
         }
     </style>
@@ -41,46 +62,34 @@
 <body>
 
     <center>
-        <h1>USER LOGIN</h1>
+        <h1>Train Ticket Reservation System</h1>
     </center>
 
     <form class="container" action="home.html">
 
-
-        <section class="vh-100">
-            <div class="container py-5 h-100">
+        <section class="vh-80">
+            <div class="container py-2 h-10">
                 <div class="row d-flex align-items-center justify-content-center h-100">
                     <div class="col-md-8 col-lg-7 col-xl-6">
                         <img src="train5.png"
                             class="img-fluid" alt="Phone image">
                     </div>
-                    <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                    <div class="col-md-3 col-lg-5 col-xl-5 offset-xl-1">
                         <form>
 
-                            
-                            <div>
-                                <center>
-
-                                <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b8298"
-                                    href="login.html" role="button">
-                                    <i class="fab fa-facebook-f me-2"></i>User Login</a>
-                                <a class="btn btn-primary btn-lg btn-block" style="background-color: #ee5583"
-                                    href="adminLogin.html" role="button">
-                                    <i class="fab fa-twitter me-2"></i>Admin Login</a>
-                                    
-                                <center>
-                            </div>
                             <br></br>
                             <!-- Email input -->
-                            <div class="form-outline mb-4">
-                                <input type="email" id="form1Example13" class="form-control form-control-lg" />
-                                <label class="form-label" for="form1Example13">Email address</label>
+                            <div class="form-outline mb-4" style="display: flex;">
+                                <label class="form-label" for="form1Example13"><i class="fas fa-envelope-open" id="emaill"></i></label>
+                                <input type="email" id="form1Example13" class="form-control form-control-lg" placeholder="john@gmail.com"/>
+                                
                             </div>
 
                             <!-- Password input -->
-                            <div class="form-outline mb-4">
+                            <div class="form-outline mb-4" style="display: flex;">
+                                <label class="form-label" for="form1Example23"><i class="fas fa-key" id="pass"></i></label>
                                 <input type="password" id="form1Example23" class="form-control form-control-lg" />
-                                <label class="form-label" for="form1Example23">Password</label>
+                               
                             </div>
 
                             <div class="d-flex justify-content-around align-items-center mb-4">
@@ -89,7 +98,8 @@
                                     <input class="form-check-input" type="checkbox" value="" id="form1Example3"
                                         checked />
                                     <label class="form-check-label" for="form1Example3"> Remember me </label>
-
+                                    <br>
+                                    <br>
 
                                     <!-- Submit button -->
                                     <div class="col-12">
@@ -101,11 +111,11 @@
                                         <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
                                     </div>
 
-                                    <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998"
+                                    <a class="btn btn-primary btn-medium btn-block" style="background-color: #3b5998"
                                         href="https://www.facebook.com/login.php" role="button">
                                         <i class="fab fa-facebook-f me-2"></i>Continue with Facebook
                                     </a>
-                                    <a class="btn btn-primary btn-lg btn-block" style="background-color: #55acee"
+                                    <a class="btn btn-primary btn-medium btn-block" style="background-color: #55acee"
                                         href="https://twitter.com/i/flow/login" role="button">
                                         <i class="fab fa-twitter me-2"></i>Continue with Twitter</a>
 
@@ -118,7 +128,7 @@
     </form>
 
     <div class="footer">
-        <div class="card-footer bg-secondary">
+        <div class="card-footer bg-dark" style="height: 10vh;">
             <p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &copy; @Copyright 2021.</p>
         </div>
     </div>

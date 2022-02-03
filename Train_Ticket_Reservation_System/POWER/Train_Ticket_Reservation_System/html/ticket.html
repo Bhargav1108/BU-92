@@ -7,12 +7,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Train_Ticket_Reservation_System</title>
     <link rel="stylesheet" href="ticket.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.8.1/css/all.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script>
+
+
+
+        $(document).ready(function () {
+            $('#payment_gateway').hide(); //enter the class or id of the particular html element which you wish to hide. 
+        });
+        $(document).ready(function () {
+            $("#payment").click(function () {
+                $("#payment_gateway").fadeIn();
+            });
+        });
+
+
+    </script>
+    <style>
+        body {
+    background: #f5f5f5
+}
+
+.rounded {
+    border-radius: 1rem
+}
+
+.nav-pills .nav-link {
+    color: #555
+}
+
+.nav-pills .nav-link.active {
+    color: white
+}
+
+input[type="radio"] {
+    margin-right: 5px
+}
+
+.bold {
+    font-weight: bold
+}
+    </style>
 </head>
 <style>
-
 </style>
 <section id="home">
     <nav id="navbar">
@@ -24,41 +72,45 @@
                         <li class="item3"><a href="login.html">Logout</a></li>  
                     </ul>
                 </div>
-    
+     
         </table>
     </nav>
-
+<h2 align="center">Search Your Train Here:</h2>
 <body align="center">
    
 <section class="inputt">
+    <h3 align="center">Trains By Stations</h3>
     <div align="center" class="form">
         <br>
         <input type="text"  class="inp" id="f_name" placeholder="From"><br>
-        <input type="text" class="inp" id="t_name"><br><br>
+        <input type="text" class="inp" id="t_name" placeholder="To"><br><br>
         <input id="btn" class="form-button"  type="submit" value="search" onclick="get_trains()"/>
-</div>  
+</div> 
+ 
 <br>
 <div class="form" align="right">
 <div id="trdata">
  </div>
 </div>
-
 <br>
-
+<hr>
+<h3 align="center">Trains by ID</h3>
     <div align="center" class="form">
                 <br>
                 <input type="number"  class="inp" id="tr_no" placeholder="Enter train number"><br>
                 <input type="date" class="inp" id="da_te"><br><br>
-                <input id="btn" class="form-button"  type="submit" value="contuinue" onclick="get_train()"/>
+                <input id="btn" class="form-button"  type="submit" value="continue" onclick="get_train()"/>
     </div>  
     <br>
+   
     <div class="form" align="right">
         <div id="tdata">
          </div>
         </div>
 
     <br>
-
+        <hr>
+        <h3 align="center">Enter Passenger Details:</h3>
     <div align="center" class="form2">
         
                 <!-- <td align="center">Number of Passenger</td> -->
@@ -66,52 +118,226 @@
                 <input type="text"  class="inp"  id="pa_na" placeholder="Name"/><br>
                 <input type="text"  class="inp"  id="pa_ag" placeholder="Age"/><br>
                 <input type="text" class="inp"   id="pa_gn" placeholder="Gender"/><br><br>
-                <input type="submit"  class="form-button"  onclick="add_pa()" value="Add" /><br>
+                   
+<div class="inputtt">
+    <div align="center" class="form">
+
+                <select id= "Classes" class="label">
+            <option value="CLASS">All Classes</option>
+            <option value="CLASS">AC First Class(1A)</option>
+            <option value="CLASS">Anubhuti Class(EA)</option>
+            <option value="CLASS">Exec.Chair Car(EC)</option>
+            <option value="CLASS">AC 2 Tier(2A)</option>
+            <option value="CLASS">First Class(FC)</option>
+            <option value="CLASS">AC 3 Tier(3A)</option>
+            <option value="CLASS">AC 3 Economy(3E)</option>
+            <option value="CLASS">AC Chair car(CC)</option>
+            <option value="CLASS">Sleeper(SL)</option>
+            <option value="CLASS">Second Sitting(2S)</option>    
+        </select>
+        <br>
+        <select id= "Quota" class="label">
+            <option value="CLASS">GENERAL QUOTA</option>
+    <option value="QUOTA">LADIES</option>
+    <option value="QUOTA">LOWER BERTH/SR.CITIZEN</option>
+    <option value="QUOTA">DIVYANG</option>
+    <option value="QUOTA">TATKAL</option>
+    <option value="QUOTA">PREMIUM TATKAL</option>   
+</select><br><br>
+    </div> 
+</div>  
+                <input type="submit"  class="btn btn-primary"  onclick="add_pa()" value="Add" /><br>
         
     </div>  
-
-    <br> 
-
+    <br>
+    <h3 align="center">Passengers:</h3>
+    
     <div class="form" >
         <div id="padata">
         </div>
-         <input id="btn" type="submit" class="form-button" value="Book Ticket" onclick="book_ticket()" />
-         <a class="form-button" href="payment.html" role="button">Payment</a>
-   
     </div>
-
-        <br> 
-
-    
-    <div class="form" >   
-        <div id="tcdata">
+        <hr>
+        <br>
+        <div align="center">
+         <input id="btn" type="button" class="btn btn-primary" value="Book Ticket" onclick="book_ticket()" />
         </div>
-        <p>
-            <input id="generatePDF" type="submit" class="form-button" value="Download Ticket" onclick="download_ticket()" />
-        
-        </p>
-    </div>
+         <br>
+         <div class="form" align="center">
+            <div id="tcdata">
+             </div>
+        </div>
+         <br>
+         <div align="center">
+            <button type="button" class="btn btn-success" id="payment">Payment</a>
+        </div>
+        <br>
+        <br>
+        <div align="center">
+
+            <div id="payment_gateway">
+
+                <div class="container py-5">
+                    <!-- For demo purpose -->
+                    <div class="row mb-4">
+                        <div class="col-lg-8 mx-auto text-center">
+                            <h1 class="display-6 text-dark">Payment Gateway</h1>
+                        </div>
+                    </div> <!-- End -->
+                    <div class="row">
+                        <div class="col-lg-6 mx-auto">
+                            <div class="card ">
+                                <div class="card-header">
+                                    <div class="bg-white shadow-sm pt-4 pl-2 pr-2 pb-2">
+                                        <!-- Credit card form tabs -->
+                                        <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-3">
+                                            <li class="nav-item"> <a data-toggle="pill" href="#credit-card"
+                                                    class="nav-link active "> <i class="fas fa-credit-card mr-2"></i>
+                                                    Credit Card </a> </li>
+                                            <li class="nav-item"> <a data-toggle="pill" href="#paypal"
+                                                    class="nav-link "> <i class="fab fa-paypal mr-2"></i> Paypal </a>
+                                            </li>
+                                            <li class="nav-item"> <a data-toggle="pill" href="#upi" class="nav-link ">
+                                                    <i class="fab fa-paypal mr-2"></i>Upi</a> </li>
+                                            <li class="nav-item"> <a data-toggle="pill" href="#net-banking"
+                                                    class="nav-link "> <i class="fas fa-mobile-alt mr-2"></i> Net
+                                                    Banking </a> </li>
+                                        </ul>
+                                    </div> <!-- End -->
+                                    <!-- Credit card form content -->
+                                    <div class="tab-content">
+                                        <!-- credit card info-->
+                                        <div id="credit-card" class="tab-pane fade show active pt-3">
+                                            <form role="form" onsubmit="event.preventDefault()">
+                                                <div class="form-group"> <label for="username">
+                                                        <h6>Card Owner</h6>
+                                                    </label> <input type="text" name="username"
+                                                        placeholder="Card Owner Name" required class="form-control ">
+                                                </div>
+                                                <div class="form-group"> <label for="cardNumber">
+                                                        <h6>Card number</h6>
+                                                    </label>
+                                                    <div class="input-group"> <input type="text" name="cardNumber"
+                                                            placeholder="Valid card number" class="form-control "
+                                                            required>
+                                                        <div class="input-group-append"> <span
+                                                                class="input-group-text text-muted"> <i
+                                                                    class="fab fa-cc-visa mx-1"></i> <i
+                                                                    class="fab fa-cc-mastercard mx-1"></i> <i
+                                                                    class="fab fa-cc-amex mx-1"></i> </span> </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-8">
+                                                        <div class="form-group"> <label><span class="hidden-xs">
+                                                                    <h6>Expiration Date</h6>
+                                                                </span></label>
+                                                            <div class="input-group"> <input type="number"
+                                                                    placeholder="MM" name="" class="form-control"
+                                                                    required> <input type="number" placeholder="YY"
+                                                                    name="" class="form-control" required> </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group mb-4"> <label data-toggle="tooltip"
+                                                                title="Three digit CV code on the back of your card">
+                                                                <h6>CVV <i class="fa fa-question-circle d-inline"></i>
+                                                                </h6>
+                                                            </label> <input type="text" required class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer"> <button type="button"
+                                                        class="subscribe btn btn-primary btn-block shadow-sm"
+                                                        onclick="c_payment()"> Confirm Payment </button>
+                                            </form>
+                                        </div>
+                                    </div> <!-- End -->
+                                    <!-- Paypal info -->
+                                    <div id="paypal" class="tab-pane fade pt-3">
+                                        <h6 class="pb-2">Select your paypal account type</h6>
+                                        <div class="form-group "> <label class="radio-inline"> <input type="radio"
+                                                    name="optradio" checked> Domestic </label> <label
+                                                class="radio-inline"> <input type="radio" name="optradio"
+                                                    class="ml-5">International </label></div>
+                                        <p> <button type="button" class="btn btn-primary "><i
+                                                    class="fab fa-paypal mr-2"></i> Log into my Paypal</button> </p>
+                                        <p class="text-muted"> Note: After clicking on the button, you will be directed
+                                            to a secure gateway for payment. After completing the payment process, you
+                                            will be redirected back to the website to view details of your order. </p>
+                                    </div> <!-- End -->
+                                    <!-- bank transfer info -->
+                                    <div id="upi" class="tab-pane fade pt-3">
+                                        <h6 class="pb-2">Enter Your Upi Below</h6>
+                                        <div class="form-group "> <label class="input-group-text"> <input type="text"
+                                                    name="upi" placeholder="Example:hacker@ybl"></label></div>
+                                        <div class="card-footer"> <button type="button"
+                                                class="subscribe btn btn-primary btn-block shadow-sm"
+                                                onclick="payment1()"> Confirm Payment </button></div>
+                                        <p class="text-muted"> Note: After clicking on the button, you will be directed
+                                            to a secure gateway for payment. After completing the payment process, you
+                                            will be redirected back to the website to view details of your order. </p>
+                                    </div>
+                                    <div id="net-banking" class="tab-pane fade pt-3">
+                                        <div class="form-group "> <label for="Select Your Bank">
+                                                <h6>Select your Bank</h6>
+                                            </label> <select class="form-control" id="ccmonth">
+                                                <option value="" selected disabled>--Please select your Bank--</option>
+                                                <option>AXIS BANK</option>
+                                                <option>BANK OF MAHARASHTRA</option>
+                                                <option>CENTRAL BANK OF INDIA</option>
+                                                <option>HDFC BANK</option>
+                                                <option>ICICI BANK </option>
+                                                <option>CANERA BANK</option>
+                                                <option>PUNJAB NATIONAL BANK</option>
+                                                <option>KOTAK MAHINDRA BANK</option>
+                                                <option>STATE BANK OF INDIA</option>
+                                                <option>INDUSLAND BANK</option>
+                                            </select> </div>
+                                        <div class="form-group">
+                                            <p> <button type="button" class="btn btn-primary "><i
+                                                        class="fas fa-mobile-alt mr-2"></i> Proceed Payment</button>
+                                            </p>
+                                        </div>
+                                        <p class="text-muted">Note: After clicking on the button, you will be directed
+                                            to a secure gateway for payment. After completing the payment process, you
+                                            will be redirected back to the website to view details of your order. </p>
+                                    </div> <!-- End -->
+                                    <!-- End -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <br>
+            </div>
+        </div>
+        <div align="center">
+        <button type="button" class="btn btn-info" onclick="download_ticket()">Download Ticket</button>
+        </div>
     
     </section>
+
+    </div>
+    </section>
 </section>
-<!--<script>
- var doc = new jsPDF();
-        var specialElementHandlers = {
-            '#tcdata': function (element, renderer) {
-                return true;
-            }
-        };
 
-        //margins.left, // x coord   margins.top, { // y coord
-        $('#generatePDF').click(function () {
-            doc.fromHTML($('#home').html(), 15, 15, {
-                'width': 700,
-                'elementHandlers': specialElementHandlers
-            });
-            doc.save('sample_file.pdf');
-        });
-
-</script>-->
 </body>
+<script>
+
+    function payment1() {
+
+        alert("Payment successfull")
+
+    }
+
+    function c_payment() {
+        alert("Transaction Successfull");
+    }
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
 <script src="/js/ticket.js"></script>
 </html>

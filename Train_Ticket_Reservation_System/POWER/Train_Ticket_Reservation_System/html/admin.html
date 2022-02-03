@@ -28,47 +28,83 @@
         }
 
         h1 {
-            color: #f8f7f7;
+            color:#f8f9fa;
             text-align: center;
             font-size: 300%;
-            font-style: oblique;
             max-block-size: 45%;
             background-color: rgb(0, 0, 0);
+            padding-top: 10px;
+            font-weight: 700;
+        }
+        h3 {
+            color: #0b090a;
+            text-align: center;
+            font-size: 300%;
+            max-block-size: 45%;
+            /* background-color: rgb(0, 0, 0); */
+            padding-top: 10px;
+            font-weight: 700;
         }
 
         body {
-            background-image: url("train8.jpg");
-
             background-repeat: no-repeat;
             background-size: cover;
+            background-image: linear-gradient(#0c0c0c,#020c22);
+        }
+        .imgcontainer h1{
+          height: 6vw;
         }
 
         h2 {
-            color: rgb(29, 223, 223);
+            color:#fffcf2;
+            font-weight: 600;
+            letter-spacing: 4px;
+            word-spacing: 8px;
+            font-size: 1rem;
+
         }
 
 
         footer {
-            margin-top: 600px;
             color:navy;
+            margin-top: 4px;
+            height: 9vh;
+            width: 100vw;
+            background-color: black;
+            display: flex;
+            justify-content: space-around;
         }
+        label {
+            margin-top: 50px;
+            margin-left: 500px;
+            color: rgb(0, 0, 0);
+        }
+
+
+        h1 {
+            text-align: center;
+        }
+        .bodyback{
+         height: 520px;
+        }
+        .container{
+          /* background-image: linear-gradient(#010e1f,#c5baaf); */
+          background-color: #ffffff;
+          border-radius: 20px;
+          border: 3px solid red;
+        }
+
 
     </style>
 </head>
 
 <body>
 
- 
-
-
-    <table>
         <div class="imgcontainer">
-            <h1><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/45/IRCTC_Logo.svg/1200px-IRCTC_Logo.svg.png" alt="Avatar" class="avatar">
+            <h1><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBxdfspOmjhs7FGLF3d1XuSwqa9yJYuVK_Zg&usqp=CAU" alt="Avatar" class="avatar">
                 Indian Railway Catering and Tourism Corporation</h1>
         </div>
-    </table>
-
-    <div>
+    <!-- <div> -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Home</a>
@@ -111,16 +147,6 @@
                 </ul>
               </li>
   
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Show Trains
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="showTrains.html">Show Trains</a></li>
-  
-                </ul>
-              </li>
             </ul>
   
           </div>
@@ -128,60 +154,52 @@
         <a style="margin-right:20px;" class="form-button" href="adminLogin.html" role="button">Logout</a>
       </nav>
   
-    </div>
+    <!-- </div> -->
   
   
-    <tr>
+    <div class="bodyback">
+      <tr>
         <td>
             <marquee>
-                <h2>WELCOME TO INDIAN RAILWAY</h2>
+                <h2>WELCOME TO INDIAN RAILWAYS</h2>
             </marquee>
         </td>
     </tr>
     
+    <div id="train_details" class="container">
+      <div class="trainheading">
+        <h3 >All Train Details</h3>
+      </div>
+      
 
+      <table class=" table table-stripped">
+          <thead>
 
-<!-- Footer -->
-<footer class="page-footer font-small special-color-dark pt-4">
-<div class="special-color-dark pt-4">
-  <!-- Footer Elements -->
-  <div class="container">
+              <tr>
+                  <th>Train Number</th>
+                  <th>Train Name</th>
+                  <th>Source</th>
+                  <th>Destination</th>
+                  <th>Fare</th>
+              </tr>
 
-    <!-- Social buttons -->
-    <ul class="list-unstyled list-inline text-center">
-      <li class="list-inline-item">
-        <a class="btn-floating btn-fb mx-1">
-          <i class="fab fa-facebook-f"> </i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a class="btn-floating btn-tw mx-1">
-          <i class="fab fa-twitter"> </i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a class="btn-floating btn-gplus mx-1">
-          <i class="fab fa-google-plus-g"> </i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a class="btn-floating btn-li mx-1">
-          <i class="fab fa-linkedin-in"> </i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a class="btn-floating btn-dribbble mx-1">
-          <i class="fab fa-dribbble"> </i>
-        </a>
-      </li>
-    </ul>
-    <!-- Social buttons -->
+          </thead>
+
+          <tbody id="table_body">
+
+          </tbody>
+
+      </table>
 
   </div>
-  <!-- Footer Elements -->
 
+    </div>
+<br>
+
+<!-- Footer -->
+<footer class="page-footer font-large special-color-dark pt-4">
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2022 Copyright:
+  <div class="footer-copyright text-center">© 2022 Copyright:
     <a href="https://www.irctc.co.in/nget/train-search"> IRCTC.Com</a>
   </div>
   <!-- Copyright -->
@@ -189,6 +207,7 @@
 </footer>
 <!-- Footer -->
 <!-- Footer -->
+<script src="/js/TrainDataAdmin.js"></script>
 </body>
 
 </html>

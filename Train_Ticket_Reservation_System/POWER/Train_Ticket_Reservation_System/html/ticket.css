@@ -1,9 +1,13 @@
-
+*{
+    text-decoration: none;
+    border-collapse: collapse;
+}
 /* Navigation bar */
 #navbar{
     display: flex;
-    align-items: center;
+    align-items:flex-start;
     position: relative;
+    width: 100vw;
 }
 
 
@@ -22,28 +26,29 @@ img.avatar {
 #navbar ul{
     display: flex;
     font-family: 'Baloo Bhai', cursive;
+    padding-bottom: 20px;
 }
 
 #navbar ul li{
    list-style: none;                    /* dot to home got omited */
   font-size: 1rem;
-}
-
+} 
+ 
 #navbar::before{
     content: "";
-    background-color: rgb(238, 225, 225);
+    background-color: #0b090a;
     position: absolute;
-    top:-4px;
-    left:0px;
+    top:-8px;
+    left:-10px;
     height: 100%;
     width:100%;
     z-index: -1;
     opacity: 0.9;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 
 #navbar ul li a{
-    color: white;
+    color: black;
    display: block;
    padding: 10px 15px;
    text-decoration: none;                /* underline of home got omited */
@@ -51,18 +56,20 @@ img.avatar {
 }
 
 #navbar ul li a:hover{
-    
-    color: black;
-    background-color: white;
+    background-color: black;
+    color: white;
+    transform: scale(0.95);
+    border: 2px solid #ffc300;
 
 }
 
     h1 {
-      color: #000000;
+      color: #ffffff;
       text-align: center;
-      font-size: 250%;
+      font-size: 300%;
       font-style: oblique;
       max-block-size: 75%;
+      font-variant: small-caps;
      
     }
 
@@ -76,7 +83,7 @@ img.avatar {
 .item1 {
     position: relative;
     right: -537px;} */
-
+ 
 .item2{
     position: absolute;
     right: 150px; 
@@ -87,8 +94,11 @@ img.avatar {
     position: absolute;
     right: 20px;
     margin-top: -24px;
-    background-color: rgb(9, 10, 9); 
+    /* border: 3px solid red; */
+    background-color: #ffc300; 
     border-radius: 30px;
+    font-weight: 700;
+    color: black;
 }
 
 .item4{
@@ -131,15 +141,15 @@ img.avatar {
     height: 750px;
     top:0px;
     left:0px;
-    width: 100%;
+    width: 96vw;
     z-index: -1;
     opacity:0.9;
 }
 
      .inputt{
-        height: 1500px;
+        /* height: 3500px; */
         width: 1200px; 
-        border: 1px solid rgb(245, 234, 234);
+        border: 15px solid #212529;
        margin: auto;
         margin-top: 30px;
         border-radius: 30px;
@@ -155,33 +165,90 @@ img.avatar {
     width: 308px;
     border-radius: 10px;
     padding: 10px;
+    margin-top: 5px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    font-variant: small-caps;
 }
 
 .inp:hover{
-        height: 23px;
-    width: 308px;
+    transform: scale(.99);
     border-radius: 10px;
     padding: 10px;
-    border: 10px solid black;
+    border: 2px solid black;
+    border: 2px solid red;
+    cursor: pointer;
 }
 
 .form-button{
-    border: 2px solid #a19998;
+    border: 2px solid green;
     background-color: black;
     text-align: center;
     border-radius: 10px;
-    height: 30px;
-    width: 140px;
+    height: 50px;
+    width: 190px;
     font-weight: bold;
     color: rgb(247, 238, 238);
     padding: 1px;
 }
 
 .form-button:hover{
-    background-color: rgb(177, 7, 7);
+    background-color: black;
+    border: 3px solid red;
+    transform: scale(.9);
     border-radius: 10px;
-    height: 30px;
-    width: 140px;
+    transform: scale(.98);
     font-weight: bold;
     color: rgb(250, 246, 246);
+}
+
+#pay{
+    padding: 5px;
+}
+h2{
+    font-size: 1.7rem;
+    font-variant: small-caps;
+}
+h3{
+    font-size: 1.3rem;
+    font-variant: small-caps;
+}
+.label{
+    border: 2px solid black;
+    height: 40px;
+    width: 340px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 5px;
+    text-align: center;
+    font-variant: small-caps;
+
+}
+select:hover{
+    transform: scale(.99);
+    border: 2px solid red;
+    cursor: pointer;
+}
+table{
+    border: 15px solid #dee2e6;
+}
+tr th{
+    border: 4px solid #dee2e6;
+    text-align: center;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+td{
+    border: 4px solid #dee2e6;
+    text-align: center;
+    padding: 15px;
+    border-collapse: collapse;
+}
+thead td{
+    /* border: 2px solid green; */
+    text-align: center;
+    padding: 15px;
 }
