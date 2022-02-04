@@ -1,16 +1,19 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Train_Ticket_Reservation_System</title>
     <link rel="stylesheet" href="ticket.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+    
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -18,6 +21,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.8.1/css/all.css"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 
     <script>
 
@@ -36,142 +40,142 @@
     </script>
     <style>
         body {
-    background: #f5f5f5
-}
+            background: #f5f5f5
+        }
 
-.rounded {
-    border-radius: 1rem
-}
+        .rounded {
+            border-radius: 1rem
+        }
 
-.nav-pills .nav-link {
-    color: #555
-}
+        .nav-pills .nav-link {
+            color: #555
+        }
 
-.nav-pills .nav-link.active {
-    color: white
-}
+        .nav-pills .nav-link.active {
+            color: white
+        }
 
-input[type="radio"] {
-    margin-right: 5px
-}
+        input[type="radio"] {
+            margin-right: 5px
+        }
 
-.bold {
-    font-weight: bold
-}
+        .bold {
+            font-weight: bold
+        }
     </style>
 </head>
-<style>
-</style>
-<section id="home">
-    <nav id="navbar">
-        <table>
-            <div class="imgcontainer">
-                <h1><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/45/IRCTC_Logo.svg/1200px-IRCTC_Logo.svg.png" alt="Avatar" class="avatar">
-                    Indian Railway Catering and Tourism Corporation</h1>
+
+<body align="center">
+    <section id="home">
+        <nav id="navbar">
+            <table>
+                <div class="imgcontainer">
+                    <h1><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/45/IRCTC_Logo.svg/1200px-IRCTC_Logo.svg.png"
+                            alt="Avatar" class="avatar">
+                        Indian Railway Catering and Tourism Corporation</h1>
                     <ul>
-                        <li class="item3"><a href="login.html">Logout</a></li>  
+                        <li class="item3"><a href="index.html">Logout</a></li>
                     </ul>
                 </div>
-     
-        </table>
-    </nav>
-<h2 align="center">Search Your Train Here:</h2>
-<body align="center">
+
+            </table>
+        </nav>
+    </section>
+    <h2 align="center">Search Your Train Here:</h2>
    
-<section class="inputt">
-    <h3 align="center">Trains By Stations</h3>
-    <div align="center" class="form">
+    <section class="inputt">
+        <div align="center" class="form">
+        <h3>Trains By Stations</h3>
+
+            <br>
+            <input type="text" class="inp" id="f_name" placeholder="From"><br>
+            <input type="text" class="inp" id="t_name" placeholder="To"><br><br>
+            <input id="btn" class="form-button" type="submit" value="search" onclick="get_trains()" />
+        </div>
         <br>
-        <input type="text"  class="inp" id="f_name" placeholder="From"><br>
-        <input type="text" class="inp" id="t_name" placeholder="To"><br><br>
-        <input id="btn" class="form-button"  type="submit" value="search" onclick="get_trains()"/>
-</div> 
- 
-<br>
-<div class="form" align="right">
-<div id="trdata">
- </div>
-</div>
-<br>
-<hr>
-<h3 align="center">Trains by ID</h3>
-    <div align="center" class="form">
-                <br>
-                <input type="number"  class="inp" id="tr_no" placeholder="Enter train number"><br>
-                <input type="date" class="inp" id="da_te"><br><br>
-                <input id="btn" class="form-button"  type="submit" value="continue" onclick="get_train()"/>
-    </div>  
-    <br>
-   
-    <div class="form" align="right">
-        <div id="tdata">
-         </div>
+        <div class="form" align="right">
+            <div id="trdata">
+            </div>
         </div>
 
-    <br>
-        <hr>
-        <h3 align="center">Enter Passenger Details:</h3>
-    <div align="center" class="form2">
-        
-                <!-- <td align="center">Number of Passenger</td> -->
-                <input type="number"  class="inp"  id="pa_no"  placeholder="Enter Number of Passenger"><br>
-                <input type="text"  class="inp"  id="pa_na" placeholder="Name"/><br>
-                <input type="text"  class="inp"  id="pa_ag" placeholder="Age"/><br>
-                <input type="text" class="inp"   id="pa_gn" placeholder="Gender"/><br><br>
-                   
-<div class="inputtt">
-    <div align="center" class="form">
-
-                <select id= "Classes" class="label">
-            <option value="CLASS">All Classes</option>
-            <option value="CLASS">AC First Class(1A)</option>
-            <option value="CLASS">Anubhuti Class(EA)</option>
-            <option value="CLASS">Exec.Chair Car(EC)</option>
-            <option value="CLASS">AC 2 Tier(2A)</option>
-            <option value="CLASS">First Class(FC)</option>
-            <option value="CLASS">AC 3 Tier(3A)</option>
-            <option value="CLASS">AC 3 Economy(3E)</option>
-            <option value="CLASS">AC Chair car(CC)</option>
-            <option value="CLASS">Sleeper(SL)</option>
-            <option value="CLASS">Second Sitting(2S)</option>    
-        </select>
         <br>
-        <select id= "Quota" class="label">
-            <option value="CLASS">GENERAL QUOTA</option>
-    <option value="QUOTA">LADIES</option>
-    <option value="QUOTA">LOWER BERTH/SR.CITIZEN</option>
-    <option value="QUOTA">DIVYANG</option>
-    <option value="QUOTA">TATKAL</option>
-    <option value="QUOTA">PREMIUM TATKAL</option>   
-</select><br><br>
-    </div> 
-</div>  
-                <input type="submit"  class="btn btn-primary"  onclick="add_pa()" value="Add" /><br>
-        
-    </div>  
-    <br>
-    <h3 align="center">Passengers:</h3>
-    
-    <div class="form" >
-        <div id="padata">
+
+        <div align="center" class="form">
+            <h3>Trains by ID</h3>
+            <br>
+            <input type="number" class="inp" id="tr_no" placeholder="Enter train number"><br>
+            <input type="date" class="inp" id="da_te"><br><br>
+            <input id="btn" class="form-button" type="submit" value="contuinue" onclick="get_train()" />
         </div>
-    </div>
-        <hr>
+        <br>
+        <div class="form" align="right">
+            <div id="tdata">
+            </div>
+        </div>
+
+        <br>
+
+        <div align="center" class="form2">
+            <h3>Enter Passenger Details:</h3>
+
+            <!-- <td align="center">Number of Passenger</td> -->
+            <input type="number" class="inp" id="pa_no" placeholder="Enter Number of Passenger"><br>
+            <input type="text" class="inp" id="pa_na" placeholder="Name" /><br>
+            <input type="text" class="inp" id="pa_ag" placeholder="Age" /><br>
+            <input type="text" class="inp" id="pa_gn" placeholder="Gender" /><br><br>
+
+
+            <select id= "Classes" class="label">
+                                <option value="CLASS">All Classes</option>
+                        <option value="CLASS">AC First Class(1A)</option>
+                        <option value="CLASS">Anubhuti Class(EA)</option>
+                        <option value="CLASS">Exec.Chair Car(EC)</option>
+                        <option value="CLASS">AC 2 Tier(2A)</option>
+                        <option value="CLASS">First Class(FC)</option>
+                        <option value="CLASS">AC 3 Tier(3A)</option>
+                        <option value="CLASS">AC 3 Economy(3E)</option>
+                        <option value="CLASS">AC Chair car(CC)</option>
+                        <option value="CLASS">Sleeper(SL)</option>
+                        <option value="CLASS">Second Sitting(2S)</option>    
+                    </select>
+                    <select id= "Quota" class="label">
+                        <option value="CLASS">GENERAL QUOTA</option>
+                <option value="QUOTA">LADIES</option>
+                <option value="QUOTA">LOWER BERTH/SR.CITIZEN</option>
+                <option value="QUOTA">DIVYANG</option>
+                <option value="QUOTA">TATKAL</option>
+                <option value="QUOTA">PREMIUM TATKAL</option>   
+            </select><br><br>
+               
+           
+            <input type="submit" class="form-button" onclick="add_pa()" value="Add" /><br>
+
+        </div>
+
+        <br>
+
+        <div align="center" class="form">
+            <h3>Passengers:</h3>
+            <div id="padata">
+            </div>
+
+            <input id="btn" type="submit" class="form-button" value="Book Ticket" onclick="book_ticket()" />
+            <br>
+
+        </div>
+
+        <br>
+        <div class="form" align="center">
+            <div id="tcdata">
+            </div>
+        </div>
+        <h2 align="center"> Do payment</h2>
+        <br>
         <br>
         <div align="center">
-         <input id="btn" type="button" class="btn btn-primary" value="Book Ticket" onclick="book_ticket()" />
-        </div>
-         <br>
-         <div class="form" align="center">
-            <div id="tcdata">
-             </div>
-        </div>
-         <br>
-         <div align="center">
             <button type="button" class="btn btn-success" id="payment">Payment</a>
         </div>
-        <br>
-        <br>
+        
         <div align="center">
 
             <div id="payment_gateway">
@@ -180,7 +184,7 @@ input[type="radio"] {
                     <!-- For demo purpose -->
                     <div class="row mb-4">
                         <div class="col-lg-8 mx-auto text-center">
-                            <h1 class="display-6 text-dark">Payment Gateway</h1>
+                            <h1 class="display-6" style="color: black;">Payment Gateway</h1>
                         </div>
                     </div> <!-- End -->
                     <div class="row">
@@ -313,31 +317,31 @@ input[type="radio"] {
                 <br>
             </div>
         </div>
+        <br>
         <div align="center">
         <button type="button" class="btn btn-info" onclick="download_ticket()">Download Ticket</button>
         </div>
-    
+    <br>
     </section>
 
-    </div>
-    </section>
-</section>
 
+
+    <script>
+
+        function payment1() {
+
+            alert("Payment successfull")
+
+        }
+
+        function c_payment() {
+            alert("Transaction Successfull");
+        }
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script src="/js/ticket.js"></script>
 </body>
-<script>
 
-    function payment1() {
-
-        alert("Payment successfull")
-
-    }
-
-    function c_payment() {
-        alert("Transaction Successfull");
-    }
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
-</script>
-<script src="/js/ticket.js"></script>
 </html>

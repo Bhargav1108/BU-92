@@ -11,10 +11,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-        <title>Train_Ticket_Reservation_System</title>
+    <title>Train_Ticket_Reservation_System</title>
 
     <style>
-         input {
+        input {
             margin-top: 20px;
             border-color: black;
         }
@@ -27,13 +27,15 @@
             padding: 10px;
             display: inline;
         }
-        .buttons{
+
+        .buttons {
             display: flex;
             width: 30vw;
             margin: auto;
-            justify-content:space-evenly;
+            justify-content: space-evenly;
         }
-        input{
+
+        input {
             width: 170px;
             border-radius: 10px;
             text-align: center;
@@ -42,29 +44,31 @@
 
         label {
             padding: 15px;
-            color:#22223b;
+            color: #22223b;
             font-weight: 800;
         }
-        h3{
+
+        h3 {
             margin-top: 10px;
             font-weight: 800;
             word-spacing: 8px;
         }
 
-        .bordering{
+        .bordering {
             width: 40vw;
             border: 15px solid #212529;
             border-radius: 30px;
             margin: auto;
             margin-top: 70px;
             text-align: center;
-            background-color:#e9ecef ;
+            background-color: #e9ecef;
         }
 
         body {
-            background-color:;
+            background-color: ;
         }
-        button{
+
+        button {
             width: 100px;
             height: 50px;
             border-radius: 30px;
@@ -72,7 +76,8 @@
             background-color: black;
             color: #e9ecef;
         }
-        button:hover{
+
+        button:hover {
             transform: scale(.85);
         }
     </style>
@@ -84,30 +89,29 @@
     <div class="bordering">
         <h3>Enter Train Details</h3>
         <hr>
-       <form class="container" id="frm">
-   
-          <div class="show">
-           <label >Train No:</label> <input type="number" id="1" name="trainNo"
-           placeholder="Enter Train Number" minlength="5" required>
-       <br>
-       <label >Train Name:</label><input type="text" id="2" name="train_name"
-           placeholder="Enter Train Name" required>
-       <br>
-       <label >Source:</label><input type="text" id="3" name="source"
-           placeholder="Enter source" required>
-       <br>
-       <label>Destination:</label><input type="text" name="destination" id="4" placeholder="Enter Destination"
-           required>
-       <br>
-       <label>Ticket Fare:</label><input type="number" name="ticketfare" id="5" placeholder="Enter Ticket Fare"
-           required>
-      <div class="buttons">
-       <button type="button" onclick="validateTrain()">Update</button>
-       <button type="reset">Reset</button>
-      </div>
-      <br>
-          </div>
-       </form>
+        <form class="container" id="frm">
+
+            <div class="show">
+                <label>Train No:</label> <input type="number" id="1" name="trainNo" placeholder="Enter Train Number"
+                    minlength="5" required>
+                <br>
+                <label>Train Name:</label><input type="text" id="2" name="train_name" placeholder="Enter Train Name"
+                    required>
+                <br>
+                <label>Source:</label><input type="text" id="3" name="source" placeholder="Enter source" required>
+                <br>
+                <label>Destination:</label><input type="text" name="destination" id="4" placeholder="Enter Destination"
+                    required>
+                <br>
+                <label>Ticket Fare:</label><input type="number" name="ticketfare" id="5" placeholder="Enter Ticket Fare"
+                    required>
+                <div class="buttons">
+                    <button type="button" onclick="validateTrain()">Update</button>
+                    <button type="reset">Reset</button>
+                </div>
+                <br>
+            </div>
+        </form>
     </div>
     <script>
 
@@ -116,141 +120,141 @@
 
             const adminId = 1;
 
-let url = 'http://localhost:9191/api/admin/' + adminId;
+            let url = 'http://localhost:9191/api/admin/' + adminId;
 
-let fr = fetch(url, { method: 'GET' })
-fr.then(function (response) {
-    return response.json();
-})
-    .then(data => {
-        console.log(data);
-        adminVerify(data);
-    })
+            let fr = fetch(url, { method: 'GET' })
+            fr.then(function (response) {
+                return response.json();
+            })
+                .then(data => {
+                    console.log(data);
+                    adminVerify(data);
+                })
 
-function adminVerify(data) {
+            function adminVerify(data) {
 
-    const obj = [];
-    for (i in data) {
-        obj.push(data[i]);
-    }
-    console.log(obj);
+                const obj = [];
+                for (i in data) {
+                    obj.push(data[i]);
+                }
+                console.log(obj);
 
-    //const num=obj.getValue(3);
-    const num1 = obj[3];
-    const num2 = obj.at(3);
+                //const num=obj.getValue(3);
+                const num1 = obj[3];
+                const num2 = obj.at(3);
 
-    const verify = prompt("Enter Admin Phone number");
+                const verify = prompt("Enter Admin Phone number");
 
-    if (verify != num1) {
-        alert("Admin Not matched");
-    }
-    else if (verify.length != 10) {
-        alert("Enter 10 Digits ");
-    }
-    else {
-
-
-            const form = document.getElementById("frm");
-
-            const tno = Number(document.getElementById("1").value);
-            const tname = document.getElementById("2").value;
-            const source = document.getElementById("3").value;
-            const dest = document.getElementById("4").value;
-            const fare = Number(document.getElementById("5").value);
+                if (verify != num1) {
+                    alert("Admin Not matched");
+                }
+                else if (verify.length != 6) {
+                    alert("Enter Admin Secreat Key ");
+                }
+                else {
 
 
-            if (tno == "" || tno.length < 5) {
-                window.alert("Train Number above 5 ");
-            }
-            else if (tname == null || tname == "") {
-                window.alert("Train Name Should not be null ");
-            }
-            else if (source == null || source == "") {
-                alert("Source Name Not Null");
-                return false;
-            }
-            else if (dest == null || dest == "") {
-                alert("Destination Name Not Null");
-                return false;
-            }
-            else if (fare == null || fare == "") {
-                window.alert("Fare Not Null");
-            }
-            else {
+                    const form = document.getElementById("frm");
 
-                const trainObj = {
-                    "trainNo": tno,
-                    "trainName": tname,
-                    "source": source,
-                    "destination": dest,
-                    "ticketPrice": fare
+                    const tno = Number(document.getElementById("1").value);
+                    const tname = document.getElementById("2").value;
+                    const source = document.getElementById("3").value;
+                    const dest = document.getElementById("4").value;
+                    const fare = Number(document.getElementById("5").value);
+
+
+                    if (tno == "" || tno.length < 5) {
+                        window.alert("Train Number above 5 ");
+                    }
+                    else if (tname == null || tname == "") {
+                        window.alert("Train Name Should not be null ");
+                    }
+                    else if (source == null || source == "") {
+                        alert("Source Name Not Null");
+                        return false;
+                    }
+                    else if (dest == null || dest == "") {
+                        alert("Destination Name Not Null");
+                        return false;
+                    }
+                    else if (fare == null || fare == "") {
+                        window.alert("Fare Not Null");
+                    }
+                    else {
+
+                        const trainObj = {
+                            "trainNo": tno,
+                            "trainName": tname,
+                            "source": source,
+                            "destination": dest,
+                            "ticketPrice": fare
+                        }
+
+                        async function editTrainData() {
+                            const url = 'http://localhost:9191/api/train';
+
+                            const data = {
+                                method: 'PUT',
+                                headers: {
+                                    'Accept': 'application/json',
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify(trainObj)
+                            };
+                            const rawResponse = await fetch(url, data);
+                            const content = await rawResponse.json();
+
+                            alert("Train Updated Successfully");
+
+                            console.log(content);
+                        }
+                        editTrainData();
+
+                        //   form.submit();
+                    }
                 }
 
-                async function editTrainData() {
-                    const url = 'http://localhost:9191/api/train';
+                async function callApiForTrainDataUsingTrainNumber(trainNumber) {
 
-                    const data = {
-                        method: 'PUT',
-                        headers: {
-                            'Accept': 'application/json',
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(trainObj)
-                    };
-                    const rawResponse = await fetch(url, data);
-                    const content = await rawResponse.json();
+                    console.log('Data Fetching is started...');
 
-                    alert("Train Updated Successfully");
-                    
-                    console.log(content);
+                    let url = "http://localhost:9191/api/train/" + trainNumber;
+
+                    let response = await fetch(url);
+                    let jsonStr = await response.text();
+                    console.log(jsonStr);
+
+                    const trainObj = JSON.parse(jsonStr);
+
+                    console.log('Data Fetched Successfully...');
+
+                    document.getElementById("1").value = trainObj.trainNo;
+                    document.getElementById("2").value = trainObj.trainName;
+                    document.getElementById("3").value = trainObj.source;
+                    document.getElementById("4").value = trainObj.destination;
+                    document.getElementById("5").value = trainObj.ticketPrice;
+                    return trainObj;
                 }
-                editTrainData();
 
-                //   form.submit();
+                function getTrainData() {
+
+                    const queryString = window.location.search;
+                    console.log(queryString);
+
+                    const urlParams = new URLSearchParams(queryString);
+
+                    const trainNumber = urlParams.get('id')
+                    console.log(trainNumber);
+
+                    const trainObj = callApiForTrainDataUsingTrainNumber(trainNumber);
+
+                }
+
+                getTrainData();
             }
         }
-
-        async function callApiForTrainDataUsingTrainNumber(trainNumber) {
-
-            console.log('Data Fetching is started...');
-
-            let url = "http://localhost:9191/api/train/" + trainNumber;
-
-            let response = await fetch(url);
-            let jsonStr = await response.text();
-            console.log(jsonStr);
-
-            const trainObj = JSON.parse(jsonStr);
-
-            console.log('Data Fetched Successfully...');
-
-            document.getElementById("1").value = trainObj.trainNo;
-            document.getElementById("2").value = trainObj.trainName;
-            document.getElementById("3").value = trainObj.source;
-            document.getElementById("4").value = trainObj.destination;
-            document.getElementById("5").value = trainObj.ticketPrice;
-            return trainObj;
-        }
-
-        function getTrainData() {
-
-            const queryString = window.location.search;
-            console.log(queryString);
-
-            const urlParams = new URLSearchParams(queryString);
-
-            const trainNumber = urlParams.get('id')
-            console.log(trainNumber);
-
-            const trainObj = callApiForTrainDataUsingTrainNumber(trainNumber);
-
-        }
-
-        getTrainData();
-    }
-}
     </script>
-      
+
 </body>
 
 </html>

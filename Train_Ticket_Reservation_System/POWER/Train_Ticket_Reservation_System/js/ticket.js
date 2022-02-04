@@ -20,7 +20,7 @@ function get_trains() {
     }
     else if (tr == "") {
         alert("Enter Destination")
-    } 
+    }
     else {
 
         console.log(tr)
@@ -120,7 +120,7 @@ function add1() {
     d_tt += "Date \t:" + date + "\n"
 }
 
-var pd_tt = "S.no " + "\t" + " Name" + "\t" + "Age " + "\t" + "Gender" + "\t"+ "Fare" +"<br>"+"\n";
+var pd_tt = "S.no " + "\t" + " Name" + "\t" + "Age " + "\t" + "Gender " + "\t" + "Fare" +"<br>"+"\n";
 
 
 function add_pa() {
@@ -131,7 +131,7 @@ function add_pa() {
         alert("Choose Train");
     }
     else {
-        tab = "<table align=center id='pa_t'><tr><th>Sl No</th><th>Name</th><th>Age</th><th>Gender</th><th>Fare</th></tr>";
+        tab = "<table align=center id='pa_t'><tr><th>Sl no</th><th>NAME</th><th>Age</th><th>Gender</th><th>Fare</th></tr>";
         var pac = document.getElementById("pa_no").value;
         var p_fa = train.fa;
         pacd = parseInt(pac);
@@ -145,11 +145,22 @@ function add_pa() {
 
             p_ag = parseInt(document.getElementById("pa_ag").value);
             p_gn = (document.getElementById("pa_gn").value).toUpperCase();
+             
+            const discount=0;
+           /* if (p_ag <= 12) {
+                p_fa = p_fa * 50 / 100;
+            } else if (p_ag > 60) {
+                p_fa = p_fa * 60 / 100;
+            }
 
-            const discount=0
+            if (p_gn == 'F') {
+                p_fa = p_fa * 75 / 100;
+
+            }*/
+
             if (p_ag >= 60) {
                 discount = (p_fa * 40) / 100;
-                p_fa-=discount;
+                p_fa-=discount
             } else if (p_ag <= 12) {
                 discount = (p_fa * 50) / 100;
                 p_fa-=discount;
@@ -160,10 +171,10 @@ function add_pa() {
 
 
             tt_fa += p_fa;
-            tab += "<tr> <td>" + p_c + "</td><<td>" + p_na + "</td><td>" + p_ag + "</td><td>" + p_gn + "</td><td>" + p_fa + "</td></tr>";
+            tab += "<tr> <td>" + p_c + "</td><<td>" + p_na + "</td><td>" + p_ag + "</td><td>" + p_gn + "</td> <td>" + p_fa + "</td></tr>";
             pa += "<tr> <td>" + p_c + "</td><<td>" + p_na + "</td><td>" + p_ag + "</td><td>" + p_gn + "</td> <td>" + p_fa + "</td></tr>";
             tab += "</table>"
-            pd_tt += " " + p_c + " \t" + p_nas + "\t " + p_ag + " \t" + p_gn + "\t" + p_fa + "\n";
+            pd_tt += " " + p_c + " \t" + p_nas + "\t " + p_ag + " \t" + p_gn + " \t" + p_fa + "\n";
             console.log(p_c);
             console.log(p_na);
             console.log(p_ag);
@@ -190,20 +201,39 @@ function show_pa() {
     document.getElementById("padata").innerHTML = pa;
 }
 
-
 function book_ticket() {
+
+    if (p_c==pacd) {
+   PNR=get_pnr();
+   console.log("pnr ="+PNR);
+   ticket="PNR : "+PNR+"<br>"
+   ticket+="Train Number : "+train.no+"<br>Train Name : "+train.na+"<br>From : "+train.so+"<br>To : "+train.de+"<br>Date : "+date;
+   ticket+="<br>"+pd_tt;
+   ticket+="<br> <br> Total Fare = "+tt_fa;
+       console.log(ticket);
+   document.getElementById("tcdata").innerHTML=ticket;
+
+   } 
+   else{
+       alert("add passenger")
+   }
+
+
+}
+
+/*function book_ticket() {
 
     if (p_c == pacd) {
         PNR = get_pnr();
         console.log("pnr =" + PNR);
-        ticket = "PNR : " + PNR +"<br>"+ "\n\n",
-            ticket += "Train Number : " + train.no +"<br>"+"\n\n",
-            ticket += "Train Name : " + train.na +"<br>"+ "\n\n",
-            ticket += "From : " + train.so + "<br>"+"\n\n",
-            ticket += "To : " + train.de + "<br>"+"\n\n",
-            ticket += "Date : " + date +"<br>"+ "\n\n",
-            ticket += "Passengers:" +"<br>"+ "\n\n",
-            ticket += "" + pd_tt +"<br>"+"\n",
+        ticket = "PNR : " + PNR + "\n\n",
+            ticket += "Train Number : " + train.no + "\n\n",
+            ticket += "Train Name : " + train.na + "\n\n",
+            ticket += "From : " + train.so + "\n\n",
+            ticket += "To : " + train.de + "\n\n",
+            ticket += "Date : " + date + "\n\n",
+            ticket += "Passengers:" + "\n\n",
+            ticket += "" + pd_tt + "\n",
             ticket += " Total Fare = " + tt_fa;
         console.log(ticket);
         document.getElementById("tcdata").innerHTML = ticket;
@@ -213,7 +243,7 @@ function book_ticket() {
     }
 
 
-}
+}*/
 
 
 function get_pnr() {
@@ -238,38 +268,21 @@ function get_pnr() {
 
 function download_ticket() {
     if (PNR == "") {
-        alert("No Dta found");
+        alert("No Data found");
     }
     else {
-       var text = ticket;
+        var text = ticket;
         var filename = PNR + ".txt";
-          
 
         download(filename, text);
 
-        var text1 =ticket;
-         var filename1 = ''+PNR+'.pdf';
+        var doc = new jsPDF();
+        doc.autoTable({html: '#tcdata'});
+        doc.save("bookbill.pdf");
+
       
          download1(filename1, text1);
 
-
-        // var content =ticket;
-        // any kind of extension (.txt,.cpp,.cs,.bat)
-        /*var filename =''+PNR+'.pdf';
-
-        var blob = new Blob([content], {
-        type: "text/plain;charset=utf-8"
-        });
-
-        var url=URL.createObjectURL(blob);
-
-        var a = document.createElement("a");
-        a.href = window.URL.createObjectURL(new Blob([content], {type: "application/pdf"}));
-        a.download ='File.pdf';
-        a.click(); */
-        
-
-       
     }
 
 }
@@ -291,7 +304,7 @@ function download(filename, text) {
 
 function download1(filename1, text1) {
     var element = document.createElement('a');
-    element.setAttribute('href', 'data:text/pdf;charset=utf-8,' + encodeURI(text1));
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text1));
     element.setAttribute('download', filename1);
 
     element.style.display = 'none';
