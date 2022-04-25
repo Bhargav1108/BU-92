@@ -1259,6 +1259,7 @@ if you want to sort then use have to implement Comparable interface and then ove
 then it compare to objects and and also use sort method along with it . 
 
 ===============================================================================================
+
 Dot notaion vs square bracket notation for accessing:
 =====================================================
 
@@ -1293,3 +1294,186 @@ const keyword in JavaScript:
 The const keyword has all the properties that are the same as the let keyword, except the user cannot update it.
 Scope: block scoped: When users declare a const variable, they need to initialize it, otherwise, it returns an error. The user cannot update
 the const variable once it is declared.
+
+
+
+===================================================
+28/12/2021
+===================================================
+JDBC vs Hibernate:
+=================
+
+JDBC:   JDBC stands for Java Database Connectivity. It is a java application programming interface to provide a connection between 
+	the Java programming language and a wide range of databases (i.e), it establishes a link between the two so that a programmer could 
+	send data from Java code and store it in the database for future use.
+
+Hibernate: Hibernate is an open-source, non-invasive, light-weight java ORM(Object-relational mapping) framework to develop objects 
+	   which are independent of the database software and make independent persistence logic in all JAVA, JEE. It simplifies the interaction
+	   of java applications with databases. Hibernate is an implementation of JPA(Java Persistence API).
+
+
+	JDBC
+
+  1)In JDBC, one needs to write code to map the object model’s data
+  representation to the schema of the relational model.		                 
+
+ 2) JDBC enables developers to create queries and update data to a 	       
+  relational database using the Structured Query Language (SQL).	        
+
+  3)JDBC code needs to be written in a try catch block as it throws   	     
+  checked exception(SQLexception).
+
+ 4) JDBC is database dependent i.e. one needs to write different codes  	    
+  for different database.						                              
+
+  5)Creating associations between relations is quite hard in JDBC.	  
+  
+  
+  
+  Hibernate
+  
+ 1) Hibernate maps the object model’s data to the schema of the database itself with the help of annotations.
+ 
+ 2)Hibernate uses HQL (Hibernate Query Language) which is similar to SQL but understands object-oriented concepts likeinheritance, association etc.
+ 
+ 3)Whereas Hibernate manages the exceptions itself by marking them as unchecked.
+ 
+ 4) Whereas Hibernate is database independent and same code can work for many databases with minor changes.
+ 
+ 5)Associations like one-to-one, one-to-many, many-to-one, and many-to-many can  be acquired easily with the help of annotations.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+JPA vs. Hibernate:
+==================
+
+JPA:    JPA (Java Persistence API) is a specification of Java which is used to access, manage, and persist data between Java object and relational database. 
+	It is considered as a standard approach for Object Relational Mapping.JPA can be seen as a bridge between object-oriented domain models and 
+	relational database systems. Being a specification, JPA doesn't perform any operation by itself. Thus, it requires implementation. So, ORM tools
+        like Hibernate, TopLink, and iBatis implements JPA specifications for data persistence.
+
+
+Hibernate: Hibernate is a Java framework which is used to store the Java objects in the relational database system. It is an open-source, lightweight, 
+	   ORM (Object Relational Mapping) tool.
+	   Hibernate is an implementation of JPA. So, it follows the common standards provided by the JPA.
+
+
+
+			JPA																					Hibernate
+		------------------																	-------------------------						
+Java Persistence API (JPA) defines the management of relational data 			Hibernate is an Object-Relational Mapping (ORM) tool which is used 
+in the Java applications.														to save the state of Java object into the database.
+
+It is just a specification. 
+Various ORM tools implement it for data persistence.							It is one of the most frequently used JPA implementation.
+
+It is defined in javax.persistence package.										It is defined in org.hibernate package.
+
+The EntityManagerFactory interface is used to interact with the entity 			It uses SessionFactory interface to create Session instances.
+manager factory for the persistence unit.
+Thus, it provides an entity manager.
+
+It uses EntityManager interface to create, read, and delete operations for  		It uses Session interface to create, read, and delete operations for 
+instances of mapped entity classes. This interface interacts with the persistence	instances of mapped entity classes. It behaves as a runtime interface 
+context.																			between a Java application and Hibernate.
+
+It uses Java Persistence Query Language (JPQL) as an object-oriented 				It uses Hibernate Query Language (HQL) as an object-oriented query 
+query language to perform database operations.										language to perform database operations.
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+Different bean scopes in Spring framework:
+==========================================
+Bean scope in Spring framework or Spring MVC is scope for a bean managed by Spring IOC container. You may know that Spring is a framework that 
+is based on Dependency Injection and Inversion of Control and provides bean management facilities to Java application. In Spring-managed environment 
+bean (Java Classes) are created and wired by the Spring framework. Spring allows you to define how those beans will be created and the scope of the 
+bean is one of those details. 
+
+In spring framework bean declared in ApplicationContext.xml can reside in five scopes:
+
+1) Singleton (default scope)
+
+2) prototype
+
+3) request
+
+4) session
+
+5) global-session
+
+Singleton and prototype are two common bean scope which is available on all Spring Application Context while request, session, and global session bean 
+scope are only available on Web aware application Context like WebApplicationContext.
+
+
+Singleton bean scope is default scope for bean declared in Spring and applicable when you don’t specify scope attribute while specifying bean details 
+in ApplicationContext.xml or Spring configuration file. Singleton bean scope is like a Singleton pattern in Java where only one instance of the bean 
+is created per Spring container. 
+
+So no matter how many times you call getBean() method, the same bean instance will be returned if its bean scope is declared as Singleton. While in 
+the case of prototype bean scope, every getBean() call creates a new instance of Spring bean. The difference between Singleton and prototype bean scope
+is also a popular Spring question.
+
+On the other hand request, bean scope allows each HTTP request to have its own instance of a bean created and supplied by Spring framework, while Session 
+bean scope allows a Web application to have bean instance per session basis. both of these bean scopes are available on WebApplicationContext or any 
+web-aware application context.
+
+The Last one which is global session bean scope is only applicable to portlet aware bean scope and allows bean instance per global session. In short 
+singleton vs prototype is important which clearly segregates one instance to multiple instances of bean. 
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Difference between beanfactory and applicationcontext:
+======================================================
+The Spring Framework comes with two IOC containers – BeanFactory and ApplicationContext. The BeanFactory is the most basic version of IOC containers, 
+and the ApplicationContext extends the features of BeanFactory.
+
+BeanFactory loads beans on-demand, while ApplicationContext loads all beans at startup. Thus, BeanFactory is lightweight as compared to ApplicationContext.
+ApplicationContext is considered a heavy IOC container because its eager-loading strategy loads all the beans at startup. BeanFactory is lightweight by 
+comparison and could be handy in memory-constrained systems. Nevertheless, we'll see in the next sections why ApplicationContext is preferred for most 
+use cases.
+
+ApplicationContext enhances BeanFactory in a more framework-oriented style and provides several features that are suitable for enterprise applications.
+
+For instance, it provides messaging (i18n or internationalization) functionality, event publication functionality, annotation-based dependency injection, 
+and easy integration with Spring AOP features.Apart from this, the ApplicationContext supports almost all types of bean scopes, but the BeanFactory only 
+supports two scopes — Singleton and Prototype. Therefore, it's always preferable to use ApplicationContext when building complex enterprise applications.
+
+The ApplicationContext automatically registers BeanFactoryPostProcessor and BeanPostProcessor at startup. On the other hand, the BeanFactory does not 
+register these interfaces automatically.
+
+The ApplicationContext comes with advanced features, including several that are geared towards enterprise applications, while the BeanFactory comes with only 
+basic features. Therefore, it's generally recommended to use the ApplicationContext, and we should use BeanFactory only when memory consumption is critical.
+
+
+===============================================================
+
+
+GET vs POST 
+
+================
+
+GET: 
+
+1) get request should be used to retriveve data form the source 
+2) it's one of the most common method in http
+3) it'a only used for getting or requesting the data ( not modifying ) 
+4) get request have length restrictions 
+5) get request can be cashed 
+6) it never be used when dealing with sensitive data
+
+POST:
+
+1) post request is used of creating source data or inserting data or updating etc
+2) it never be cashed 
+3) it can't have length restrictions
+4) it helps us to securely pass the sensitive and confedential data like login details to server. 
+5) data passed using post can't visible in the url.
+
+
+
+

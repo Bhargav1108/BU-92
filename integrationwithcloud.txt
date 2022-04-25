@@ -1,0 +1,196 @@
+server: centralise,storage,backup
+
+OU(oraganizational unit)
+
+Microsoft Servr: server 2000, server 2003,2008,2012,2016
+
+server: linux, redhat,ibm
+
+Main Server(dc:domain controller)
+
+AWs: domain controller)
+
+
+IIS: internet instance service 
+
+how to make a web server 
+
+1) create the instance 
+2) connect to rdp client 
+3) after connecting rdp open service manager 
+4) install the iss and enable webserver in that 
+5) open c drive and go to initpub->wwwrooot then dele the files and then add the html files and save the name with index.html in that and try to access with the public ip address
+
+create the own server :
+
+create vpc 
+create subnet ( select the vpc which you have created)
+
+configure the windows server 2008 on virtual box
+
+server 2008
+
+once you will be try to install server os ( this is 50% server) 
+
+if you want to make 100% server ( install active directory services as
+well as automatically your server)
+
+
+1) How to proof this is a local machine 
+
+click on window button then right click on computer and go to properties
+
+then you can see the workgroup 
+
+2) how to create local user
+
+click on window button then right click on computer and go to manage then
+double click on config and click on local user and group and then right click on the users and create new user 
+Now enter the details 
+and uncheck first and check 2nd and 3rd option then clcik create and close
+
+3) how to login with the created user 
+
+ctrl + delete ==> logoff  
+then click right ctrl and delete 
+
+4) how to install active directory and make main server(domain controller)
+
+window+R type ncpa.cpl click on ok 
+click on the local area connection then click on the properties 
+then click on the Ipv4 then click on the properties and click on the 
+check mark use following ip address 
+ ip ==> 10.10.10.100
+ subnet ==> automatically come 
+ Dns==> 10.10.10.100
+
+then click ok and close 
+
+
+win+R type dcpromo hit enter then it has install active server directory 
+now check user advanced then click next 
+then check mark create a new directory then you have give the domain name like( facebook , google etc ) 
+click on next next next 
+click on yes 
+again click on yes 
+
+click on next and set same password 
+and check mark and click okk.
+
+5) how to create a domain user 
+
+window go to admin tools and click active directory user an computer 
+
+click on domain name ( python.org) 
+click on the users
+right click on users go to new and then go to user and click 
+giver the details  like user name and give the password and 
+uncheck 1st and check 2nd and 3rd and click ok 
+
+6) how to create domain group
+
+window go to admin tools and click active directory user an computer 
+
+click on domain name ( python.org) 
+click on the users
+right click on users go to new and then go to group and click 
+
+give group name  click ok 
+
+7) how to add user in group 
+
+the above steps upto users common 
+
+click on the grop and click on member then click add and advance and find now then click on the user and click on the ok 
+
+then click apply ok 
+
+8) how to add a user in policy 
+
+window+r type gpmc.msc ( group policy for management console) 
+click ok 
+click on the forest:domain name 
+click on the domains
+click on the domain name 
+click on the domain controller 
+click on the default domain controller policy 
+then right click on it and edit it 
+double click on policies and window settings 
+then security settings then click on local policies 
+then user rights and assignments 
+then click allow log on locally properties 
+then click on the add user 
+then browser and advance and findout user and select 
+click on ok 
+click on okk and apply 
+press wind+r type gpupdate and hit enter 
+
+9) how to make client machine 
+
+create one more virtual machine for client 
+wind+r type ncpa.cpl
+
+local are connections click properties and ipv4 properties 
+
+give static ip address 10.10.10.101
+and give dns and  10.10.10.100
+then okk and close 
+
+firewall.cpl
+check mark off and click okk 
+
+ping 10.10.10.100
+
+
+another 
+
+computer properties then change setting then change
+check mark domain 
+give server ip and password and click ok and close
+
+7) how to migrate the database 
+
+come to the main server 
+window+E 
+go to c drive 
+right click on blank screen and create new folder 
+right click on the floder go to properties 
+go to shring then click share select everyone 
+then click add 
+then change co owner then click share and click done 
+then click close 
+right click on the newly created folder 
+go to properties and go to share 
+copy the path 
+go to administrative tool 
+then go to active directory
+then click on the domain and users
+right click on the domain user name bhargav go to properties 
+and click on profile tab then check mark connect and paste the path 
+and choose the drive and click apply 
+
+now come to the client machine 
+log off the administrator and login with the other user 
+and see on the filer explorer 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

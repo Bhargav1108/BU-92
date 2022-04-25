@@ -1,0 +1,36 @@
+
+	What's app test Case scenario 
+	
+	
+1) Login Functionality 
+ 
+		=> input enbled or not 
+		=> it accepts characters --- shows error
+		=> whether it accepts phone number or not 
+		=> lenth of the phone number 
+		=> wehther it send otp to the particular mobile or not 
+		=> it's properly verified the otp or not 
+		=> if accepts wrong otp -- throws error
+
+2) User Interface 
+
+		=>user able add new memebers to it or delete from it 
+		=> user can make calls 
+		=> user could ablt to keep status or not 
+		=> user can able to see the chatting memebers 
+		=> on click the users chat whether it open that chat or not 
+		=> searching the user name on search bar 
+		=> text length to send  if exceeds -- error 
+		=> whether attachments and emoji & micro phone wokring properly 
+		=> it showing lastseen and blue ticks or not 
+		=> is it able to send images and videos 
+		=> if length of the video is exceeds then give error
+	
+3) user profile 
+
+		=> whether user able to change dp 
+		=> if not able to change then error 
+		=> whether user able to update bio  
+		=> bio check length ==> length  exceeded
+		
+	

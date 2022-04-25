@@ -24,6 +24,5 @@ select @var;
  
  select boot_camp.newfunction(@var);
  use ticket;
- select * from ticket;
-
+ select * from tickect;
 
