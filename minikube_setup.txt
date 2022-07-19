@@ -1,0 +1,22 @@
+To make vt -x /AMT -d on virtual machine 
+
+
+
+C:\Program Files\Oracle\VirtualBox>VBoxManage modifyvm Ubuntu --nested-hw-virt on
+VBoxManage.exe: error: Could not find a registered machine named 'Ubuntu'
+VBoxManage.exe: error: Details: code VBOX_E_OBJECT_NOT_FOUND (0x80bb0001), component VirtualBoxWrap, interface IVirtualBox, callee IUnknown
+VBoxManage.exe: error: Context: "FindMachine(Bstr(a->argv[0]).raw(), machine.asOutParam())" at line 547 of file VBoxManageModifyVM.cpp
+
+C:\Program Files\Oracle\VirtualBox>VBoxManage modifyvm ubuntu-20.04.3-desktop-amd64 (1) --nested-hw-virt on
+VBoxManage.exe: error: Could not find a registered machine named 'ubuntu-20.04.3-desktop-amd64'
+VBoxManage.exe: error: Details: code VBOX_E_OBJECT_NOT_FOUND (0x80bb0001), component VirtualBoxWrap, interface IVirtualBox, callee IUnknown
+VBoxManage.exe: error: Context: "FindMachine(Bstr(a->argv[0]).raw(), machine.asOutParam())" at line 547 of file VBoxManageModifyVM.cpp
+
+C:\Program Files\Oracle\VirtualBox>VBoxManage modifyvm bhargav-VirtualBox --nested-hw-virt on
+VBoxManage.exe: error: Could not find a registered machine named 'bhargav-VirtualBox'
+VBoxManage.exe: error: Details: code VBOX_E_OBJECT_NOT_FOUND (0x80bb0001), component VirtualBoxWrap, interface IVirtualBox, callee IUnknown
+VBoxManage.exe: error: Context: "FindMachine(Bstr(a->argv[0]).raw(), machine.asOutParam())" at line 547 of file VBoxManageModifyVM.cpp
+
+C:\Program Files\Oracle\VirtualBox>VBoxManage modifyvm Ubuntu20.04 --nested-hw-virt on
+
+C:\Program Files\Oracle\VirtualBox>

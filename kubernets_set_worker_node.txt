@@ -1,0 +1,1000 @@
+ubuntu@ip-172-31-87-180:~$ sudo su
+root@ip-172-31-87-180:/home/ubuntu# apt-get update
+Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal InRelease
+Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]
+Get:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/universe amd64 Packages [8628 kB]
+Get:5 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]
+Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/universe Translation-en [5124 kB]
+Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/universe amd64 c-n-f Metadata [265 kB]
+Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/multiverse amd64 Packages [144 kB]
+Get:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/multiverse Translation-en [104 kB]
+Get:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/multiverse amd64 c-n-f Metadata [9136 B]
+Get:11 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [1573 kB]
+Get:12 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main Translation-en [302 kB]
+Get:13 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 c-n-f Metadata [14.7 kB]
+Get:14 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages [801 kB]
+Get:15 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/restricted Translation-en [114 kB]
+Get:16 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/restricted amd64 c-n-f Metadata [500 B]
+Get:17 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [904 kB]
+Get:18 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/universe Translation-en [200 kB]
+Get:19 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/universe amd64 c-n-f Metadata [20.1 kB]
+Get:20 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages [23.7 kB]
+Get:21 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/multiverse Translation-en [7312 B]
+Get:22 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 c-n-f Metadata [580 B]
+Get:23 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-backports/main amd64 Packages [42.0 kB]
+Get:24 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-backports/main Translation-en [10.0 kB]
+Get:25 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-backports/main amd64 c-n-f Metadata [864 B]
+Get:26 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-backports/restricted amd64 c-n-f Metadata [116 B]
+Get:27 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-backports/universe amd64 Packages [21.6 kB]
+Get:28 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-backports/universe Translation-en [15.0 kB]
+Get:29 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-backports/universe amd64 c-n-f Metadata [716 B]
+Get:30 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-backports/multiverse amd64 c-n-f Metadata [116 B]
+Get:31 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [1238 kB]
+Get:32 http://security.ubuntu.com/ubuntu focal-security/main Translation-en [217 kB]
+Get:33 http://security.ubuntu.com/ubuntu focal-security/main amd64 c-n-f Metadata [9564 B]
+Get:34 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 Packages [748 kB]
+Get:35 http://security.ubuntu.com/ubuntu focal-security/restricted Translation-en [107 kB]
+Get:36 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 c-n-f Metadata [504 B]
+Get:37 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages [678 kB]
+Get:38 http://security.ubuntu.com/ubuntu focal-security/universe Translation-en [116 kB]
+Get:39 http://security.ubuntu.com/ubuntu focal-security/universe amd64 c-n-f Metadata [13.1 kB]
+Get:40 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 Packages [20.7 kB]
+Get:41 http://security.ubuntu.com/ubuntu focal-security/multiverse Translation-en [5196 B]
+Get:42 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 c-n-f Metadata [500 B]
+Fetched 21.8 MB in 4s (6225 kB/s)
+Reading package lists... Done
+root@ip-172-31-87-180:/home/ubuntu# apt-get install docker.io
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  bridge-utils containerd dns-root-data dnsmasq-base libidn11 pigz runc
+  ubuntu-fan
+Suggested packages:
+  ifupdown aufs-tools cgroupfs-mount | cgroup-lite debootstrap docker-doc
+  rinse zfs-fuse | zfsutils
+The following NEW packages will be installed:
+  bridge-utils containerd dns-root-data dnsmasq-base docker.io libidn11 pigz
+  runc ubuntu-fan
+0 upgraded, 9 newly installed, 0 to remove and 68 not upgraded.
+Need to get 74.5 MB of archives.
+After this operation, 361 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/universe amd64 pigz amd64 2.4-1 [57.4 kB]
+Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 bridge-utils amd64 1.6-2ubuntu1 [30.5 kB]
+Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 runc amd64 1.0.1-0ubuntu2~20.04.1 [4155 kB]
+Get:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 containerd amd64 1.5.5-0ubuntu3~20.04.1 [33.0 MB]
+Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 dns-root-data all 2019052802 [5300 B]
+Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 libidn11 amd64 1.33-2.2ubuntu2 [46.2 kB]
+Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 dnsmasq-base amd64 2.80-1.1ubuntu1.4 [315 kB]
+Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/universe amd64 docker.io amd64 20.10.7-0ubuntu5~20.04.2 [36.9 MB]
+Get:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 ubuntu-fan all 0.12.13 [34.5 kB]
+Fetched 74.5 MB in 2s (44.1 MB/s)
+Preconfiguring packages ...
+Selecting previously unselected package pigz.
+(Reading database ... 63895 files and directories currently installed.)
+Preparing to unpack .../0-pigz_2.4-1_amd64.deb ...
+Unpacking pigz (2.4-1) ...
+Selecting previously unselected package bridge-utils.
+Preparing to unpack .../1-bridge-utils_1.6-2ubuntu1_amd64.deb ...
+Unpacking bridge-utils (1.6-2ubuntu1) ...
+Selecting previously unselected package runc.
+Preparing to unpack .../2-runc_1.0.1-0ubuntu2~20.04.1_amd64.deb ...
+Unpacking runc (1.0.1-0ubuntu2~20.04.1) ...
+Selecting previously unselected package containerd.
+Preparing to unpack .../3-containerd_1.5.5-0ubuntu3~20.04.1_amd64.deb ...
+Unpacking containerd (1.5.5-0ubuntu3~20.04.1) ...
+Selecting previously unselected package dns-root-data.
+Preparing to unpack .../4-dns-root-data_2019052802_all.deb ...
+Unpacking dns-root-data (2019052802) ...
+Selecting previously unselected package libidn11:amd64.
+Preparing to unpack .../5-libidn11_1.33-2.2ubuntu2_amd64.deb ...
+Unpacking libidn11:amd64 (1.33-2.2ubuntu2) ...
+Selecting previously unselected package dnsmasq-base.
+Preparing to unpack .../6-dnsmasq-base_2.80-1.1ubuntu1.4_amd64.deb ...
+Unpacking dnsmasq-base (2.80-1.1ubuntu1.4) ...
+Selecting previously unselected package docker.io.
+Preparing to unpack .../7-docker.io_20.10.7-0ubuntu5~20.04.2_amd64.deb ...
+Unpacking docker.io (20.10.7-0ubuntu5~20.04.2) ...
+Selecting previously unselected package ubuntu-fan.
+Preparing to unpack .../8-ubuntu-fan_0.12.13_all.deb ...
+Unpacking ubuntu-fan (0.12.13) ...
+Setting up runc (1.0.1-0ubuntu2~20.04.1) ...
+Setting up dns-root-data (2019052802) ...
+Setting up libidn11:amd64 (1.33-2.2ubuntu2) ...
+Setting up bridge-utils (1.6-2ubuntu1) ...
+Setting up pigz (2.4-1) ...
+Setting up containerd (1.5.5-0ubuntu3~20.04.1) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/containerd.service → /lib/systemd/system/containerd.service.
+Setting up docker.io (20.10.7-0ubuntu5~20.04.2) ...
+Adding group `docker' (GID 119) ...
+Done.
+Created symlink /etc/systemd/system/multi-user.target.wants/docker.service → /lib/systemd/system/docker.service.
+Created symlink /etc/systemd/system/sockets.target.wants/docker.socket → /lib/systemd/system/docker.socket.
+Setting up dnsmasq-base (2.80-1.1ubuntu1.4) ...
+Setting up ubuntu-fan (0.12.13) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/ubuntu-fan.service → /lib/systemd/system/ubuntu-fan.service.
+Processing triggers for systemd (245.4-4ubuntu3.13) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for dbus (1.12.16-2ubuntu2.1) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.2) ...
+root@ip-172-31-87-180:/home/ubuntu# usermod -aG docker $USER
+root@ip-172-31-87-180:/home/ubuntu# systemctl start docker
+root@ip-172-31-87-180:/home/ubuntu# systemctl enable docker
+root@ip-172-31-87-180:/home/ubuntu# curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
+OK
+root@ip-172-31-87-180:/home/ubuntu# apt install curl
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+curl is already the newest version (7.68.0-1ubuntu2.7).
+curl set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 68 not upgraded.
+root@ip-172-31-87-180:/home/ubuntu# apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal InRelease
+Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-backports InRelease
+Hit:5 http://security.ubuntu.com/ubuntu focal-security InRelease
+Get:4 https://packages.cloud.google.com/apt kubernetes-xenial InRelease [9383 B]
+Get:6 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 Packages [53.6 kB]
+Fetched 63.0 kB in 0s (128 kB/s)
+Reading package lists... Done
+root@ip-172-31-87-180:/home/ubuntu# apt-mark hold kubeadm kubelet kubectl
+kubeadm set on hold.
+kubelet set on hold.
+kubectl set on hold.
+root@ip-172-31-87-180:/home/ubuntu# kubeadm version
+kubeadm: command not found
+root@ip-172-31-87-180:/home/ubuntu# apt-get install kubeadm kubelet kubectl
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  conntrack cri-tools ebtables kubernetes-cni socat
+Suggested packages:
+  nftables
+The following NEW packages will be installed:
+  conntrack cri-tools ebtables kubeadm kubectl kubelet kubernetes-cni socat
+The following held packages will be changed:
+  kubeadm kubectl kubelet
+0 upgraded, 8 newly installed, 0 to remove and 68 not upgraded.
+Need to get 73.6 MB of archives.
+After this operation, 321 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 conntrack amd64 1:1.4.5-2 [30.3 kB]
+Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 ebtables amd64 2.0.11-3build1 [80.3 kB]
+Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 socat amd64 1.7.3.3-2 [323 kB]
+Get:4 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 cri-tools amd64 1.19.0-00 [11.2 MB]
+Get:5 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubernetes-cni amd64 0.8.7-00 [25.0 MB]
+Get:6 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubelet amd64 1.23.3-00 [19.5 MB]
+Get:7 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubectl amd64 1.23.3-00 [8929 kB]
+Get:8 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubeadm amd64 1.23.3-00 [8580 kB]
+Fetched 73.6 MB in 2s (35.3 MB/s)
+Selecting previously unselected package conntrack.
+(Reading database ... 64249 files and directories currently installed.)
+Preparing to unpack .../0-conntrack_1%3a1.4.5-2_amd64.deb ...
+Unpacking conntrack (1:1.4.5-2) ...
+Selecting previously unselected package cri-tools.
+Preparing to unpack .../1-cri-tools_1.19.0-00_amd64.deb ...
+Unpacking cri-tools (1.19.0-00) ...
+Selecting previously unselected package ebtables.
+Preparing to unpack .../2-ebtables_2.0.11-3build1_amd64.deb ...
+Unpacking ebtables (2.0.11-3build1) ...
+Selecting previously unselected package kubernetes-cni.
+Preparing to unpack .../3-kubernetes-cni_0.8.7-00_amd64.deb ...
+Unpacking kubernetes-cni (0.8.7-00) ...
+Selecting previously unselected package socat.
+Preparing to unpack .../4-socat_1.7.3.3-2_amd64.deb ...
+Unpacking socat (1.7.3.3-2) ...
+Selecting previously unselected package kubelet.
+Preparing to unpack .../5-kubelet_1.23.3-00_amd64.deb ...
+Unpacking kubelet (1.23.3-00) ...
+Selecting previously unselected package kubectl.
+Preparing to unpack .../6-kubectl_1.23.3-00_amd64.deb ...
+Unpacking kubectl (1.23.3-00) ...
+Selecting previously unselected package kubeadm.
+Preparing to unpack .../7-kubeadm_1.23.3-00_amd64.deb ...
+Unpacking kubeadm (1.23.3-00) ...
+Setting up conntrack (1:1.4.5-2) ...
+Setting up kubectl (1.23.3-00) ...
+Setting up ebtables (2.0.11-3build1) ...
+Setting up socat (1.7.3.3-2) ...
+Setting up cri-tools (1.19.0-00) ...
+Setting up kubernetes-cni (0.8.7-00) ...
+Setting up kubelet (1.23.3-00) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/kubelet.service → /lib/systemd/system/kubelet.service.
+Setting up kubeadm (1.23.3-00) ...
+Processing triggers for man-db (2.9.1-1) ...
+root@ip-172-31-87-180:/home/ubuntu# apt-mark hold kubeadm kubelet kubectl
+kubeadm set on hold.
+kubelet set on hold.
+kubectl set on hold.
+root@ip-172-31-87-180:/home/ubuntu# kubeadm version
+kubeadm version: &version.Info{Major:"1", Minor:"23", GitVersion:"v1.23.3", GitCommit:"816c97ab8cff8a1c72eccca1026f7820e93e0d25", GitTreeState:"clean", BuildDate:"2022-01-25T21:24:08Z", GoVersion:"go1.17.6", Compiler:"gc", Platform:"linux/amd64"}
+root@ip-172-31-87-180:/home/ubuntu# swapoff -a
+root@ip-172-31-87-180:/home/ubuntu# hostnamectl set-hostname worker_node
+root@ip-172-31-87-180:/home/ubuntu# kubeadm init
+[init] Using Kubernetes version: v1.23.3
+[preflight] Running pre-flight checks
+[preflight] Pulling images required for setting up a Kubernetes cluster
+[preflight] This might take a minute or two, depending on the speed of your internet connection
+[preflight] You can also perform this action in beforehand using 'kubeadm config images pull'
+[certs] Using certificateDir folder "/etc/kubernetes/pki"
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local workernode] and IPs [10.96.0.1 172.31.87.180]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [localhost workernode] and IPs [172.31.87.180 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [localhost workernode] and IPs [172.31.87.180 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[certs] Generating "sa" key and public key
+[kubeconfig] Using kubeconfig folder "/etc/kubernetes"
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "kubelet.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[kubelet-start] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[kubelet-start] Starting the kubelet
+[control-plane] Using manifest folder "/etc/kubernetes/manifests"
+[control-plane] Creating static Pod manifest for "kube-apiserver"
+[control-plane] Creating static Pod manifest for "kube-controller-manager"
+[control-plane] Creating static Pod manifest for "kube-scheduler"
+[etcd] Creating static Pod manifest for local etcd in "/etc/kubernetes/manifests"
+[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory "/etc/kubernetes/manifests". This can take up to 4m0s
+[kubelet-check] Initial timeout of 40s passed.
+[kubelet-check] It seems like the kubelet isn't running or healthy.
+[kubelet-check] The HTTP call equal to 'curl -sSL http://localhost:10248/healthz' failed with error: Get "http://localhost:10248/healthz": dial tcp 127.0.0.1:10248: connect: connection refused.
+[kubelet-check] It seems like the kubelet isn't running or healthy.
+[kubelet-check] The HTTP call equal to 'curl -sSL http://localhost:10248/healthz' failed with error: Get "http://localhost:10248/healthz": dial tcp 127.0.0.1:10248: connect: connection refused.
+[kubelet-check] It seems like the kubelet isn't running or healthy.
+[kubelet-check] The HTTP call equal to 'curl -sSL http://localhost:10248/healthz' failed with error: Get "http://localhost:10248/healthz": dial tcp 127.0.0.1:10248: connect: connection refused.
+[kubelet-check] It seems like the kubelet isn't running or healthy.
+[kubelet-check] The HTTP call equal to 'curl -sSL http://localhost:10248/healthz' failed with error: Get "http://localhost:10248/healthz": dial tcp 127.0.0.1:10248: connect: connection refused.
+[kubelet-check] It seems like the kubelet isn't running or healthy.
+[kubelet-check] The HTTP call equal to 'curl -sSL http://localhost:10248/healthz' failed with error: Get "http://localhost:10248/healthz": dial tcp 127.0.0.1:10248: connect: connection refused.
+
+        Unfortunately, an error has occurred:
+                timed out waiting for the condition
+
+        This error is likely caused by:
+                - The kubelet is not running
+                - The kubelet is unhealthy due to a misconfiguration of the node in some way (required cgroups disabled)
+
+        If you are on a systemd-powered system, you can try to troubleshoot the error with the following commands:
+                - 'systemctl status kubelet'
+                - 'journalctl -xeu kubelet'
+
+        Additionally, a control plane component may have crashed or exited when started by the container runtime.
+        To troubleshoot, list all containers using your preferred container runtimes CLI.
+
+        Here is one example how you may list all Kubernetes containers running in docker:
+                - 'docker ps -a | grep kube | grep -v pause'
+                Once you have found the failing container, you can inspect its logs with:
+                - 'docker logs CONTAINERID'
+
+error execution phase wait-control-plane: couldn't initialize a Kubernetes cluster
+To see the stack trace of this error execute with --v=5 or higher
+root@ip-172-31-87-180:/home/ubuntu# systemctl status kubelet
+● kubelet.service - kubelet: The Kubernetes Node Agent
+     Loaded: loaded (/lib/systemd/system/kubelet.service; enabled; vendor prese>
+    Drop-In: /etc/systemd/system/kubelet.service.d
+             └─10-kubeadm.conf
+     Active: activating (auto-restart) (Result: exit-code) since Wed 2022-02-16>
+       Docs: https://kubernetes.io/docs/home/
+    Process: 6085 ExecStart=/usr/bin/kubelet $KUBELET_KUBECONFIG_ARGS $KUBELET_>
+   Main PID: 6085 (code=exited, status=1/FAILURE)
+
+root@ip-172-31-87-180:/home/ubuntu# apt-get update
+Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal InRelease
+Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-backports InRelease
+Hit:4 http://security.ubuntu.com/ubuntu focal-security InRelease
+Get:5 https://packages.cloud.google.com/apt kubernetes-xenial InRelease [9383 B]
+Fetched 9383 B in 0s (20.8 kB/s)
+Reading package lists... Done
+root@ip-172-31-87-180:/home/ubuntu# kubeadm init
+[init] Using Kubernetes version: v1.23.3
+[preflight] Running pre-flight checks
+error execution phase preflight: [preflight] Some fatal errors occurred:
+        [ERROR FileAvailable--etc-kubernetes-manifests-kube-apiserver.yaml]: /etc/kubernetes/manifests/kube-apiserver.yaml already exists
+        [ERROR FileAvailable--etc-kubernetes-manifests-kube-controller-manager.yaml]: /etc/kubernetes/manifests/kube-controller-manager.yaml already exists
+        [ERROR FileAvailable--etc-kubernetes-manifests-kube-scheduler.yaml]: /etc/kubernetes/manifests/kube-scheduler.yaml already exists
+        [ERROR FileAvailable--etc-kubernetes-manifests-etcd.yaml]: /etc/kubernetes/manifests/etcd.yaml already exists
+[preflight] If you know what you are doing, you can make a check non-fatal with `--ignore-preflight-errors=...`
+To see the stack trace of this error execute with --v=5 or higher
+root@ip-172-31-87-180:/home/ubuntu# kubeadm join 172.31.82.66:6443 --token fuyl5u.iiei40qae6y8b2ag --discovery-token-ca-cert-hash sha256:09263b1538cb007aef4aa9d2473a4115dfe4fe49f34820f42dc365e2dbade55a
+[preflight] Running pre-flight checks
+error execution phase preflight: [preflight] Some fatal errors occurred:
+        [ERROR FileAvailable--etc-kubernetes-kubelet.conf]: /etc/kubernetes/kubelet.conf already exists
+        [ERROR FileAvailable--etc-kubernetes-pki-ca.crt]: /etc/kubernetes/pki/ca.crt already exists
+[preflight] If you know what you are doing, you can make a check non-fatal with `--ignore-preflight-errors=...`
+To see the stack trace of this error execute with --v=5 or higher
+root@ip-172-31-87-180:/home/ubuntu# kubeadm reset
+[reset] Reading configuration from the cluster...
+[reset] FYI: You can look at this config file with 'kubectl -n kube-system get cm kubeadm-config -o yaml'
+W0216 08:49:59.313718    8087 reset.go:101] [reset] Unable to fetch the kubeadm-config ConfigMap from cluster: failed to get config map: Get "https://172.31.87.180:6443/api/v1/namespaces/kube-system/configmaps/kubeadm-config?timeout=10s": dial tcp 172.31.87.180:6443: connect: connection refused
+[reset] WARNING: Changes made to this host by 'kubeadm init' or 'kubeadm join' will be reverted.
+[reset] Are you sure you want to proceed? [y/N]: y
+[preflight] Running pre-flight checks
+W0216 08:50:01.338922    8087 removeetcdmember.go:80] [reset] No kubeadm config, using etcd pod spec to get data directory
+[reset] Stopping the kubelet service
+[reset] Unmounting mounted directories in "/var/lib/kubelet"
+[reset] Deleting contents of config directories: [/etc/kubernetes/manifests /etc/kubernetes/pki]
+[reset] Deleting files: [/etc/kubernetes/admin.conf /etc/kubernetes/kubelet.conf /etc/kubernetes/bootstrap-kubelet.conf /etc/kubernetes/controller-manager.conf /etc/kubernetes/scheduler.conf]
+[reset] Deleting contents of stateful directories: [/var/lib/etcd /var/lib/kubelet /var/lib/dockershim /var/run/kubernetes /var/lib/cni]
+
+The reset process does not clean CNI configuration. To do so, you must remove /etc/cni/net.d
+
+The reset process does not reset or clean up iptables rules or IPVS tables.
+If you wish to reset iptables, you must do so manually by using the "iptables" command.
+
+If your cluster was setup to utilize IPVS, run ipvsadm --clear (or similar)
+to reset your system's IPVS tables.
+
+The reset process does not clean your kubeconfig files and you must remove them manually.
+Please, check the contents of the $HOME/.kube/config file.
+root@ip-172-31-87-180:/home/ubuntu# kubeadm join 172.31.82.66:6443 --token fuyl5u.iiei40qae6y8b2ag --discovery-token-ca-cert-hash sha256:09263b1538cb007aef4aa9d2473a4115dfe4fe49f34820f42dc365e2dbade55a
+[preflight] Running pre-flight checks
+[preflight] Reading configuration from the cluster...
+[preflight] FYI: You can look at this config file with 'kubectl -n kube-system get cm kubeadm-config -o yaml'
+W0216 08:50:17.357027    8101 utils.go:69] The recommended value for "resolvConf" in "KubeletConfiguration" is: /run/systemd/resolve/resolv.conf; the provided value is: /run/systemd/resolve/resolv.conf
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[kubelet-start] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+[kubelet-start] Starting the kubelet
+[kubelet-start] Waiting for the kubelet to perform the TLS Bootstrap...
+[kubelet-check] Initial timeout of 40s passed.
+[kubelet-check] It seems like the kubelet isn't running or healthy.
+[kubelet-check] The HTTP call equal to 'curl -sSL http://localhost:10248/healthz' failed with error: Get "http://localhost:10248/healthz": dial tcp 127.0.0.1:10248: connect: connection refused.
+[kubelet-check] It seems like the kubelet isn't running or healthy.
+[kubelet-check] The HTTP call equal to 'curl -sSL http://localhost:10248/healthz' failed with error: Get "http://localhost:10248/healthz": dial tcp 127.0.0.1:10248: connect: connection refused.
+[kubelet-check] It seems like the kubelet isn't running or healthy.
+[kubelet-check] The HTTP call equal to 'curl -sSL http://localhost:10248/healthz' failed with error: Get "http://localhost:10248/healthz": dial tcp 127.0.0.1:10248: connect: connection refused.
+^C
+root@ip-172-31-87-180:/home/ubuntu# cd /etc/docker/
+root@ip-172-31-87-180:/etc/docker# vi daemon.json
+root@ip-172-31-87-180:/etc/docker# systemctl daemon-reload
+root@ip-172-31-87-180:/etc/docker# systemctl restart docker
+root@ip-172-31-87-180:/etc/docker# restart kubelet
+
+Command 'restart' not found, did you mean:
+
+  command 'rstart' from deb x11-session-utils (7.7+4)
+  command 'restartd' from deb restartd (0.2.3-1build1)
+
+Try: apt install <deb name>
+
+root@ip-172-31-87-180:/etc/docker# systemctl restart kubelet
+root@ip-172-31-87-180:/etc/docker#
+root@ip-172-31-87-180:/etc/docker# kubeadm init
+invalid or incomplete external CA: failure loading key for apiserver: couldn't load the private key file /etc/kubernetes/pki/apiserver.key: open /etc/kubernetes/pki/apiserver.key: no such file or directory
+To see the stack trace of this error execute with --v=5 or higher
+root@ip-172-31-87-180:/etc/docker# cd  /etc/kubernetes/pki
+root@ip-172-31-87-180:/etc/kubernetes/pki# ls
+ca.crt
+root@ip-172-31-87-180:/etc/kubernetes/pki# kubeadm init phase control-plane all --config=configfile.yaml
+unable to read config from "configfile.yaml" : open configfile.yaml: no such file or directory
+To see the stack trace of this error execute with --v=5 or higher
+root@ip-172-31-87-180:/etc/kubernetes/pki# kubeadm init phase etcd local --config=configfile.yaml
+unable to read config from "configfile.yaml" : open configfile.yaml: no such file or directory
+To see the stack trace of this error execute with --v=5 or higher
+root@ip-172-31-87-180:/etc/kubernetes/pki# kubeadm init --skip-phases=control-plane,etcd --config=configfile.yaml
+unable to read config from "configfile.yaml" : open configfile.yaml: no such file or directory
+To see the stack trace of this error execute with --v=5 or higher
+root@ip-172-31-87-180:/etc/kubernetes/pki# cd
+root@ip-172-31-87-180:~# kubeadm init --skip-phases=control-plane,etcd --config=configfile.yaml
+unable to read config from "configfile.yaml" : open configfile.yaml: no such file or directory
+To see the stack trace of this error execute with --v=5 or higher
+root@ip-172-31-87-180:~# kubectl cluster-info
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+root@ip-172-31-87-180:~#  systemctl restart kubelet
+root@ip-172-31-87-180:~# kubeadm init
+invalid or incomplete external CA: failure loading key for apiserver: couldn't load the private key file /etc/kubernetes/pki/apiserver.key: open /etc/kubernetes/pki/apiserver.key: no such file or directory
+To see the stack trace of this error execute with --v=5 or higher
+root@ip-172-31-87-180:~# kubeadm version
+kubeadm version: &version.Info{Major:"1", Minor:"23", GitVersion:"v1.23.3", GitCommit:"816c97ab8cff8a1c72eccca1026f7820e93e0d25", GitTreeState:"clean", BuildDate:"2022-01-25T21:24:08Z", GoVersion:"go1.17.6", Compiler:"gc", Platform:"linux/amd64"}
+root@ip-172-31-87-180:~# systemctl status kubelet
+● kubelet.service - kubelet: The Kubernetes Node Agent
+     Loaded: loaded (/lib/systemd/system/kubelet.service; enabled; vendor prese>
+    Drop-In: /etc/systemd/system/kubelet.service.d
+             └─10-kubeadm.conf
+     Active: active (running) since Wed 2022-02-16 09:03:03 UTC; 51s ago
+       Docs: https://kubernetes.io/docs/home/
+   Main PID: 13296 (kubelet)
+      Tasks: 14 (limit: 4693)
+     Memory: 29.8M
+     CGroup: /system.slice/kubelet.service
+             └─13296 /usr/bin/kubelet --bootstrap-kubeconfig=/etc/kubernetes/bo>
+
+Feb 16 09:03:06 workernode kubelet[13296]: I0216 09:03:06.980619   13296 scope.>
+Feb 16 09:03:06 workernode kubelet[13296]: I0216 09:03:06.981279   13296 scope.>
+Feb 16 09:03:06 workernode kubelet[13296]: E0216 09:03:06.981629   13296 pod_wo>
+Feb 16 09:03:21 workernode kubelet[13296]: I0216 09:03:21.929944   13296 scope.>
+Feb 16 09:03:24 workernode kubelet[13296]: I0216 09:03:24.111897   13296 scope.>
+Feb 16 09:03:24 workernode kubelet[13296]: I0216 09:03:24.112188   13296 scope.>
+Feb 16 09:03:24 workernode kubelet[13296]: E0216 09:03:24.112493   13296 pod_wo>
+Feb 16 09:03:38 workernode kubelet[13296]: I0216 09:03:38.929334   13296 scope.>
+Feb 16 09:03:38 workernode kubelet[13296]: E0216 09:03:38.930145   13296 pod_wo>
+Feb 16 09:03:53 workernode kubelet[13296]: I0216 09:03:53.929736   13296 scope.>
+
+root@ip-172-31-87-180:~#  apt-get update
+Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal InRelease
+Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-backports InRelease
+Hit:4 http://security.ubuntu.com/ubuntu focal-security InRelease
+Hit:5 https://packages.cloud.google.com/apt kubernetes-xenial InRelease
+Reading package lists... Done
+root@ip-172-31-87-180:~# systemctl restart kubelet
+root@ip-172-31-87-180:~# kubeadm reset
+[reset] WARNING: Changes made to this host by 'kubeadm init' or 'kubeadm join' will be reverted.
+[reset] Are you sure you want to proceed? [y/N]: y
+[preflight] Running pre-flight checks
+W0216 09:04:31.500977   14688 removeetcdmember.go:80] [reset] No kubeadm config, using etcd pod spec to get data directory
+[reset] No etcd config found. Assuming external etcd
+[reset] Please, manually reset etcd to prevent further issues
+[reset] Stopping the kubelet service
+[reset] Unmounting mounted directories in "/var/lib/kubelet"
+[reset] Deleting contents of config directories: [/etc/kubernetes/manifests /etc/kubernetes/pki]
+[reset] Deleting files: [/etc/kubernetes/admin.conf /etc/kubernetes/kubelet.conf /etc/kubernetes/bootstrap-kubelet.conf /etc/kubernetes/controller-manager.conf /etc/kubernetes/scheduler.conf]
+[reset] Deleting contents of stateful directories: [/var/lib/kubelet /var/lib/dockershim /var/run/kubernetes /var/lib/cni]
+
+The reset process does not clean CNI configuration. To do so, you must remove /etc/cni/net.d
+
+The reset process does not reset or clean up iptables rules or IPVS tables.
+If you wish to reset iptables, you must do so manually by using the "iptables" command.
+
+If your cluster was setup to utilize IPVS, run ipvsadm --clear (or similar)
+to reset your system's IPVS tables.
+
+The reset process does not clean your kubeconfig files and you must remove them manually.
+Please, check the contents of the $HOME/.kube/config file.
+root@ip-172-31-87-180:~# cd /etc/docker/
+root@ip-172-31-87-180:/etc/docker# vi daemon.json
+root@ip-172-31-87-180:/etc/docker# systemctl daemon-reload
+root@ip-172-31-87-180:/etc/docker# systemctl restart docker
+root@ip-172-31-87-180:/etc/docker# systemctl restart kubelet
+root@ip-172-31-87-180:/etc/docker# kubeadm restart
+unknown command "restart" for "kubeadm"
+To see the stack trace of this error execute with --v=5 or higher
+root@ip-172-31-87-180:/etc/docker# kubeadm reset
+[reset] WARNING: Changes made to this host by 'kubeadm init' or 'kubeadm join' will be reverted.
+[reset] Are you sure you want to proceed? [y/N]: y
+[preflight] Running pre-flight checks
+W0216 09:05:51.579374   15076 removeetcdmember.go:80] [reset] No kubeadm config, using etcd pod spec to get data directory
+[reset] No etcd config found. Assuming external etcd
+[reset] Please, manually reset etcd to prevent further issues
+[reset] Stopping the kubelet service
+[reset] Unmounting mounted directories in "/var/lib/kubelet"
+[reset] Deleting contents of config directories: [/etc/kubernetes/manifests /etc/kubernetes/pki]
+[reset] Deleting files: [/etc/kubernetes/admin.conf /etc/kubernetes/kubelet.conf /etc/kubernetes/bootstrap-kubelet.conf /etc/kubernetes/controller-manager.conf /etc/kubernetes/scheduler.conf]
+[reset] Deleting contents of stateful directories: [/var/lib/kubelet /var/lib/dockershim /var/run/kubernetes /var/lib/cni]
+
+The reset process does not clean CNI configuration. To do so, you must remove /etc/cni/net.d
+
+The reset process does not reset or clean up iptables rules or IPVS tables.
+If you wish to reset iptables, you must do so manually by using the "iptables" command.
+
+If your cluster was setup to utilize IPVS, run ipvsadm --clear (or similar)
+to reset your system's IPVS tables.
+
+The reset process does not clean your kubeconfig files and you must remove them manually.
+Please, check the contents of the $HOME/.kube/config file.
+root@ip-172-31-87-180:/etc/docker# apt-get update
+Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal InRelease
+Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-backports InRelease
+Hit:4 https://packages.cloud.google.com/apt kubernetes-xenial InRelease
+Hit:5 http://security.ubuntu.com/ubuntu focal-security InRelease
+Reading package lists... Done
+root@ip-172-31-87-180:/etc/docker# kubeadm init
+[init] Using Kubernetes version: v1.23.3
+[preflight] Running pre-flight checks
+[preflight] Pulling images required for setting up a Kubernetes cluster
+[preflight] This might take a minute or two, depending on the speed of your internet connection
+[preflight] You can also perform this action in beforehand using 'kubeadm config images pull'
+[certs] Using certificateDir folder "/etc/kubernetes/pki"
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local workernode] and IPs [10.96.0.1 172.31.87.180]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [localhost workernode] and IPs [172.31.87.180 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [localhost workernode] and IPs [172.31.87.180 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[certs] Generating "sa" key and public key
+[kubeconfig] Using kubeconfig folder "/etc/kubernetes"
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "kubelet.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[kubelet-start] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[kubelet-start] Starting the kubelet
+[control-plane] Using manifest folder "/etc/kubernetes/manifests"
+[control-plane] Creating static Pod manifest for "kube-apiserver"
+[control-plane] Creating static Pod manifest for "kube-controller-manager"
+[control-plane] Creating static Pod manifest for "kube-scheduler"
+[etcd] Creating static Pod manifest for local etcd in "/etc/kubernetes/manifests"
+[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory "/etc/kubernetes/manifests". This can take up to 4m0s
+[apiclient] All control plane components are healthy after 7.502823 seconds
+[upload-config] Storing the configuration used in ConfigMap "kubeadm-config" in the "kube-system" Namespace
+[kubelet] Creating a ConfigMap "kubelet-config-1.23" in namespace kube-system with the configuration for the kubelets in the cluster
+NOTE: The "kubelet-config-1.23" naming of the kubelet ConfigMap is deprecated. Once the UnversionedKubeletConfigMap feature gate graduates to Beta the default name will become just "kubelet-config". Kubeadm upgrade will handle this transition transparently.
+[upload-certs] Skipping phase. Please see --upload-certs
+[mark-control-plane] Marking the node workernode as control-plane by adding the labels: [node-role.kubernetes.io/master(deprecated) node-role.kubernetes.io/control-plane node.kubernetes.io/exclude-from-external-load-balancers]
+[mark-control-plane] Marking the node workernode as control-plane by adding the taints [node-role.kubernetes.io/master:NoSchedule]
+[bootstrap-token] Using token: 8ow2my.kb2eqk08v1rfjvha
+[bootstrap-token] Configuring bootstrap tokens, cluster-info ConfigMap, RBAC Roles
+[bootstrap-token] configured RBAC rules to allow Node Bootstrap tokens to get nodes
+[bootstrap-token] configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nodes to get long term certificate credentials
+[bootstrap-token] configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token
+[bootstrap-token] configured RBAC rules to allow certificate rotation for all node client certificates in the cluster
+[bootstrap-token] Creating the "cluster-info" ConfigMap in the "kube-public" namespace
+[kubelet-finalize] Updating "/etc/kubernetes/kubelet.conf" to point to a rotatable kubelet client certificate and key
+[addons] Applied essential addon: CoreDNS
+[addons] Applied essential addon: kube-proxy
+
+Your Kubernetes control-plane has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Alternatively, if you are the root user, you can run:
+
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 172.31.87.180:6443 --token 8ow2my.kb2eqk08v1rfjvha \
+        --discovery-token-ca-cert-hash sha256:ed8c4ee5bff263da96c4a1079e27c8c4075b465a7ea19d7dbafc8b94ba65b52c
+root@ip-172-31-87-180:/etc/docker# get nodes
+login as: ubuntu
+Authenticating with public key "imported-openssh-key"
+Welcome to Ubuntu 20.04.3 LTS (GNU/Linux 5.11.0-1022-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ System information disabled due to load higher than 2.0
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+72 updates can be applied immediately.
+47 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+
+Last login: Wed Feb 16 08:37:28 2022 from 103.58.154.53
+ubuntu@workernode:~$ sudo su
+root@workernode:/home/ubuntu# kubectl get nodes
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+root@workernode:/home/ubuntu# kubectl cluster-info
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+root@workernode:/home/ubuntu# mkdir -p $HOME/.kube
+root@workernode:/home/ubuntu# cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+root@workernode:/home/ubuntu# chown $(id -u):$(id -g) $HOME/.kube/config
+root@workernode:/home/ubuntu#  kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+Warning: policy/v1beta1 PodSecurityPolicy is deprecated in v1.21+, unavailable in v1.25+
+podsecuritypolicy.policy/psp.flannel.unprivileged created
+clusterrole.rbac.authorization.k8s.io/flannel created
+clusterrolebinding.rbac.authorization.k8s.io/flannel created
+serviceaccount/flannel created
+configmap/kube-flannel-cfg created
+daemonset.apps/kube-flannel-ds created
+root@workernode:/home/ubuntu# kubectl get pods --all-namespaces
+NAMESPACE     NAME                                 READY   STATUS              RESTARTS     AGE
+kube-system   coredns-64897985d-x2n7x              0/1     ContainerCreating   0            2m58s
+kube-system   coredns-64897985d-zcfhp              0/1     ContainerCreating   0            2m58s
+kube-system   etcd-workernode                      1/1     Running             0            3m2s
+kube-system   kube-apiserver-workernode            1/1     Running             0            3m2s
+kube-system   kube-controller-manager-workernode   1/1     Running             0            3m3s
+kube-system   kube-flannel-ds-rzkv5                0/1     CrashLoopBackOff    1 (6s ago)   12s
+kube-system   kube-proxy-hpfv5                     1/1     Running             0            2m58s
+kube-system   kube-scheduler-workernode            1/1     Running             0            3m2s
+root@workernode:/home/ubuntu#  kubectl get nodes
+NAME         STATUS   ROLES                  AGE     VERSION
+workernode   Ready    control-plane,master   3m19s   v1.23.3
+root@workernode:/home/ubuntu# kubeadm join 172.31.82.66:6443 --token drzixn.snq5lku8fd1mjcw6 --discovery-token-ca-cert-hash sha256:09263b1538cb007aef4aa9d2473a4115dfe4fe49f34820f42dc365e2dbade55a
+[preflight] Running pre-flight checks
+error execution phase preflight: [preflight] Some fatal errors occurred:
+        [ERROR FileAvailable--etc-kubernetes-kubelet.conf]: /etc/kubernetes/kubelet.conf already exists
+        [ERROR Port-10250]: Port 10250 is in use
+        [ERROR FileAvailable--etc-kubernetes-pki-ca.crt]: /etc/kubernetes/pki/ca.crt already exists
+[preflight] If you know what you are doing, you can make a check non-fatal with `--ignore-preflight-errors=...`
+To see the stack trace of this error execute with --v=5 or higher
+root@workernode:/home/ubuntu# kubeadm reset
+[reset] Reading configuration from the cluster...
+[reset] FYI: You can look at this config file with 'kubectl -n kube-system get cm kubeadm-config -o yaml'
+W0216 09:10:32.402714   90337 utils.go:69] The recommended value for "resolvConf" in "KubeletConfiguration" is: /run/systemd/resolve/resolv.conf; the provided value is: /run/systemd/resolve/resolv.conf
+[reset] WARNING: Changes made to this host by 'kubeadm init' or 'kubeadm join' will be reverted.
+[reset] Are you sure you want to proceed? [y/N]: y
+[preflight] Running pre-flight checks
+[reset] Stopping the kubelet service
+[reset] Unmounting mounted directories in "/var/lib/kubelet"
+[reset] Deleting contents of config directories: [/etc/kubernetes/manifests /etc/kubernetes/pki]
+[reset] Deleting files: [/etc/kubernetes/admin.conf /etc/kubernetes/kubelet.conf /etc/kubernetes/bootstrap-kubelet.conf /etc/kubernetes/controller-manager.conf /etc/kubernetes/scheduler.conf]
+[reset] Deleting contents of stateful directories: [/var/lib/etcd /var/lib/kubelet /var/lib/dockershim /var/run/kubernetes /var/lib/cni]
+
+The reset process does not clean CNI configuration. To do so, you must remove /etc/cni/net.d
+
+The reset process does not reset or clean up iptables rules or IPVS tables.
+If you wish to reset iptables, you must do so manually by using the "iptables" command.
+
+If your cluster was setup to utilize IPVS, run ipvsadm --clear (or similar)
+to reset your system's IPVS tables.
+
+The reset process does not clean your kubeconfig files and you must remove them manually.
+Please, check the contents of the $HOME/.kube/config file.
+root@workernode:/home/ubuntu# kubeadm init
+[init] Using Kubernetes version: v1.23.3
+[preflight] Running pre-flight checks
+[preflight] Pulling images required for setting up a Kubernetes cluster
+[preflight] This might take a minute or two, depending on the speed of your internet connection
+[preflight] You can also perform this action in beforehand using 'kubeadm config images pull'
+[certs] Using certificateDir folder "/etc/kubernetes/pki"
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local workernode] and IPs [10.96.0.1 172.31.87.180]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [localhost workernode] and IPs [172.31.87.180 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [localhost workernode] and IPs [172.31.87.180 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[certs] Generating "sa" key and public key
+[kubeconfig] Using kubeconfig folder "/etc/kubernetes"
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "kubelet.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[kubelet-start] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[kubelet-start] Starting the kubelet
+[control-plane] Using manifest folder "/etc/kubernetes/manifests"
+[control-plane] Creating static Pod manifest for "kube-apiserver"
+[control-plane] Creating static Pod manifest for "kube-controller-manager"
+[control-plane] Creating static Pod manifest for "kube-scheduler"
+[etcd] Creating static Pod manifest for local etcd in "/etc/kubernetes/manifests"
+[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory "/etc/kubernetes/manifests". This can take up to 4m0s
+[apiclient] All control plane components are healthy after 7.002619 seconds
+[upload-config] Storing the configuration used in ConfigMap "kubeadm-config" in the "kube-system" Namespace
+[kubelet] Creating a ConfigMap "kubelet-config-1.23" in namespace kube-system with the configuration for the kubelets in the cluster
+NOTE: The "kubelet-config-1.23" naming of the kubelet ConfigMap is deprecated. Once the UnversionedKubeletConfigMap feature gate graduates to Beta the default name will become just "kubelet-config". Kubeadm upgrade will handle this transition transparently.
+[upload-certs] Skipping phase. Please see --upload-certs
+[mark-control-plane] Marking the node workernode as control-plane by adding the labels: [node-role.kubernetes.io/master(deprecated) node-role.kubernetes.io/control-plane node.kubernetes.io/exclude-from-external-load-balancers]
+[mark-control-plane] Marking the node workernode as control-plane by adding the taints [node-role.kubernetes.io/master:NoSchedule]
+[bootstrap-token] Using token: 8cx0ff.4gih504dy98t1r14
+[bootstrap-token] Configuring bootstrap tokens, cluster-info ConfigMap, RBAC Roles
+[bootstrap-token] configured RBAC rules to allow Node Bootstrap tokens to get nodes
+[bootstrap-token] configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nodes to get long term certificate credentials
+[bootstrap-token] configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token
+[bootstrap-token] configured RBAC rules to allow certificate rotation for all node client certificates in the cluster
+[bootstrap-token] Creating the "cluster-info" ConfigMap in the "kube-public" namespace
+[kubelet-finalize] Updating "/etc/kubernetes/kubelet.conf" to point to a rotatable kubelet client certificate and key
+[addons] Applied essential addon: CoreDNS
+[addons] Applied essential addon: kube-proxy
+
+Your Kubernetes control-plane has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Alternatively, if you are the root user, you can run:
+
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 172.31.87.180:6443 --token 8cx0ff.4gih504dy98t1r14 \
+        --discovery-token-ca-cert-hash sha256:e20e045a0f4497c99d08a25def5fb2c13b16f9992d01c61efcdf6ea50fc38cf7
+root@workernode:/home/ubuntu# kubeadm join 172.31.82.66:6443 --token drzixn.snq5lku8fd1mjcw6 --discovery-token-ca-cert-hash sha256:09263b1538cb007aef4aa9d2473a4115dfe4fe49f34820f42dc365e2dbade55a
+[preflight] Running pre-flight checks
+error execution phase preflight: [preflight] Some fatal errors occurred:
+        [ERROR FileAvailable--etc-kubernetes-kubelet.conf]: /etc/kubernetes/kubelet.conf already exists
+        [ERROR Port-10250]: Port 10250 is in use
+        [ERROR FileAvailable--etc-kubernetes-pki-ca.crt]: /etc/kubernetes/pki/ca.crt already exists
+[preflight] If you know what you are doing, you can make a check non-fatal with `--ignore-preflight-errors=...`
+To see the stack trace of this error execute with --v=5 or higher
+root@workernode:/home/ubuntu# kubectt apply -f https://docs.projectcalico.org/v3.10/manifests/calico.yaml
+kubectt: command not found
+root@workernode:/home/ubuntu# kubectl apply -f https://docs.projectcalico.org/v3.10/manifests/calico.yaml
+Unable to connect to the server: x509: certificate signed by unknown authority (possibly because of "crypto/rsa: verification error" while trying to verify candidate authority certificate "kubernetes")
+root@workernode:/home/ubuntu# kubeadm join 172.31.82.66:6443 --token drzixn.snq5lku8fd1mjcw6 --discovery-token-ca-cert-hash sha256:09263b1538cb007aef4aa9d2473a4115dfe4fe49f34820f42dc365e2dbade55a
+[preflight] Running pre-flight checks
+error execution phase preflight: [preflight] Some fatal errors occurred:
+        [ERROR FileAvailable--etc-kubernetes-kubelet.conf]: /etc/kubernetes/kubelet.conf already exists
+        [ERROR Port-10250]: Port 10250 is in use
+        [ERROR FileAvailable--etc-kubernetes-pki-ca.crt]: /etc/kubernetes/pki/ca.crt already exists
+[preflight] If you know what you are doing, you can make a check non-fatal with `--ignore-preflight-errors=...`
+To see the stack trace of this error execute with --v=5 or higher
+root@workernode:/home/ubuntu# cd /etc/kubernetes/
+root@workernode:/etc/kubernetes# ls
+admin.conf               kubelet.conf  pki
+controller-manager.conf  manifests     scheduler.conf
+root@workernode:/etc/kubernetes# vi kubelet.conf
+root@workernode:/etc/kubernetes# kubeadm reset
+[reset] Reading configuration from the cluster...
+[reset] FYI: You can look at this config file with 'kubectl -n kube-system get cm kubeadm-config -o yaml'
+W0216 09:20:12.719551  256107 utils.go:69] The recommended value for "resolvConf" in "KubeletConfiguration" is: /run/systemd/resolve/resolv.conf; the provided value is: /run/systemd/resolve/resolv.conf
+[reset] WARNING: Changes made to this host by 'kubeadm init' or 'kubeadm join' will be reverted.
+[reset] Are you sure you want to proceed? [y/N]: y
+[preflight] Running pre-flight checks
+[reset] Stopping the kubelet service
+[reset] Unmounting mounted directories in "/var/lib/kubelet"
+[reset] Deleting contents of config directories: [/etc/kubernetes/manifests /etc/kubernetes/pki]
+[reset] Deleting files: [/etc/kubernetes/admin.conf /etc/kubernetes/kubelet.conf /etc/kubernetes/bootstrap-kubelet.conf /etc/kubernetes/controller-manager.conf /etc/kubernetes/scheduler.conf]
+[reset] Deleting contents of stateful directories: [/var/lib/etcd /var/lib/kubelet /var/lib/dockershim /var/run/kubernetes /var/lib/cni]
+
+The reset process does not clean CNI configuration. To do so, you must remove /etc/cni/net.d
+
+The reset process does not reset or clean up iptables rules or IPVS tables.
+If you wish to reset iptables, you must do so manually by using the "iptables" command.
+
+If your cluster was setup to utilize IPVS, run ipvsadm --clear (or similar)
+to reset your system's IPVS tables.
+
+The reset process does not clean your kubeconfig files and you must remove them manually.
+Please, check the contents of the $HOME/.kube/config file.
+root@workernode:/etc/kubernetes# apt purge kubeadm kubectl kubelet kubernetes-cni kube*
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+Note, selecting 'kubelet' for glob 'kube*'
+Note, selecting 'kubetail' for glob 'kube*'
+Note, selecting 'kubeadm' for glob 'kube*'
+Note, selecting 'kubernetes' for glob 'kube*'
+Note, selecting 'kubectl' for glob 'kube*'
+Note, selecting 'kubernetes-cni' for glob 'kube*'
+Package 'kubernetes' is not installed, so not removed
+Package 'kubetail' is not installed, so not removed
+The following packages were automatically installed and are no longer required:
+  conntrack cri-tools ebtables socat
+Use 'sudo apt autoremove' to remove them.
+The following packages will be REMOVED:
+  kubeadm* kubectl* kubelet* kubernetes-cni*
+The following held packages will be changed:
+  kubeadm kubectl kubelet
+0 upgraded, 0 newly installed, 4 to remove and 68 not upgraded.
+After this operation, 289 MB disk space will be freed.
+Do you want to continue? [Y/n] y
+(Reading database ... 64342 files and directories currently installed.)
+Removing kubeadm (1.23.3-00) ...
+Removing kubectl (1.23.3-00) ...
+Removing kubelet (1.23.3-00) ...
+Removing kubernetes-cni (0.8.7-00) ...
+dpkg: warning: while removing kubernetes-cni, directory '/opt' not empty so not removed
+(Reading database ... 64319 files and directories currently installed.)
+Purging configuration files for kubeadm (1.23.3-00) ...
+Purging configuration files for kubelet (1.23.3-00) ...
+root@workernode:/etc/kubernetes# apt autoremove
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following packages will be REMOVED:
+  conntrack cri-tools ebtables socat
+0 upgraded, 0 newly installed, 4 to remove and 68 not upgraded.
+After this operation, 32.2 MB disk space will be freed.
+Do you want to continue? [Y/n] y
+(Reading database ... 64317 files and directories currently installed.)
+Removing conntrack (1:1.4.5-2) ...
+Removing cri-tools (1.19.0-00) ...
+Removing ebtables (2.0.11-3build1) ...
+Removing socat (1.7.3.3-2) ...
+Processing triggers for man-db (2.9.1-1) ...
+root@workernode:/etc/kubernetes# rm -rf .kube
+root@workernode:/etc/kubernetes# cd
+root@workernode:~# rm -rf .kube
+root@workernode:~# apt remove dokcer
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+E: Unable to locate package dokcer
+root@workernode:~# apt remove dokcer.io
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+E: Unable to locate package dokcer.io
+E: Couldn't find any package by glob 'dokcer.io'
+root@workernode:~# docker --version
+Docker version 20.10.7, build 20.10.7-0ubuntu5~20.04.2
+root@workernode:~# apt-get update
+Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal InRelease
+Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-backports InRelease
+Hit:4 http://security.ubuntu.com/ubuntu focal-security InRelease
+Hit:5 https://packages.cloud.google.com/apt kubernetes-xenial InRelease
+Reading package lists... Done
+root@workernode:~# apt remove docker.io
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  bridge-utils containerd dns-root-data dnsmasq-base libidn11 pigz runc
+  ubuntu-fan
+Use 'sudo apt autoremove' to remove them.
+The following packages will be REMOVED:
+  docker.io
+0 upgraded, 0 newly installed, 1 to remove and 68 not upgraded.
+After this operation, 193 MB disk space will be freed.
+Do you want to continue? [Y/n] y
+(Reading database ... 64249 files and directories currently installed.)
+Removing docker.io (20.10.7-0ubuntu5~20.04.2) ...
+'/usr/share/docker.io/contrib/nuke-graph-directory.sh' -> '/var/lib/docker/nuke-graph-directory.sh'
+Processing triggers for man-db (2.9.1-1) ...
+root@workernode:~# apt-get update
+Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal InRelease
+Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-backports InRelease
+Get:4 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]
+Hit:5 https://packages.cloud.google.com/apt kubernetes-xenial InRelease
+Get:6 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [1239 kB]
+Get:7 http://security.ubuntu.com/ubuntu focal-security/main Translation-en [217 kB]
+Fetched 1570 kB in 1s (2141 kB/s)
+Reading package lists... Done
+root@workernode:~# apt-get install docker.io
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+Suggested packages:
+  aufs-tools cgroupfs-mount | cgroup-lite debootstrap docker-doc rinse
+  zfs-fuse | zfsutils
+The following NEW packages will be installed:
+  docker.io
+0 upgraded, 1 newly installed, 0 to remove and 68 not upgraded.
+Need to get 0 B/36.9 MB of archives.
+After this operation, 193 MB of additional disk space will be used.
+Preconfiguring packages ...
+Selecting previously unselected package docker.io.
+(Reading database ... 64043 files and directories currently installed.)
+Preparing to unpack .../docker.io_20.10.7-0ubuntu5~20.04.2_amd64.deb ...
+Unpacking docker.io (20.10.7-0ubuntu5~20.04.2) ...
+Setting up docker.io (20.10.7-0ubuntu5~20.04.2) ...
+Processing triggers for man-db (2.9.1-1) ...
+root@workernode:~# usermod -aG docker $USER
+root@workernode:~# systemctl start docker
+root@workernode:~# systemctl enable docker
+root@workernode:~# curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
+OK
+root@workernode:~# apt install curl
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+curl is already the newest version (7.68.0-1ubuntu2.7).
+0 upgraded, 0 newly installed, 0 to remove and 68 not upgraded.
+root@workernode:~# apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal InRelease
+Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-backports InRelease
+Hit:4 http://security.ubuntu.com/ubuntu focal-security InRelease
+Hit:5 https://packages.cloud.google.com/apt kubernetes-xenial InRelease
+Reading package lists... Done
+root@workernode:~# apt-mark hold kubeadm kubelet kubectl
+kubeadm set on hold.
+kubelet set on hold.
+kubectl set on hold.
+root@workernode:~# kubeadm version
+bash: /usr/bin/kubeadm: No such file or directory
+root@workernode:~# apt-get install kubeadm kubelet kubectl
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  conntrack cri-tools ebtables kubernetes-cni socat
+Suggested packages:
+  nftables
+The following NEW packages will be installed:
+  conntrack cri-tools ebtables kubeadm kubectl kubelet kubernetes-cni socat
+The following held packages will be changed:
+  kubeadm kubectl kubelet
+0 upgraded, 8 newly installed, 0 to remove and 68 not upgraded.
+Need to get 0 B/73.6 MB of archives.
+After this operation, 321 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Selecting previously unselected package conntrack.
+(Reading database ... 64249 files and directories currently installed.)
+Preparing to unpack .../0-conntrack_1%3a1.4.5-2_amd64.deb ...
+Unpacking conntrack (1:1.4.5-2) ...
+Selecting previously unselected package cri-tools.
+Preparing to unpack .../1-cri-tools_1.19.0-00_amd64.deb ...
+Unpacking cri-tools (1.19.0-00) ...
+Selecting previously unselected package ebtables.
+Preparing to unpack .../2-ebtables_2.0.11-3build1_amd64.deb ...
+Unpacking ebtables (2.0.11-3build1) ...
+Selecting previously unselected package kubernetes-cni.
+Preparing to unpack .../3-kubernetes-cni_0.8.7-00_amd64.deb ...
+Unpacking kubernetes-cni (0.8.7-00) ...
+Selecting previously unselected package socat.
+Preparing to unpack .../4-socat_1.7.3.3-2_amd64.deb ...
+Unpacking socat (1.7.3.3-2) ...
+Selecting previously unselected package kubelet.
+Preparing to unpack .../5-kubelet_1.23.3-00_amd64.deb ...
+Unpacking kubelet (1.23.3-00) ...
+Selecting previously unselected package kubectl.
+Preparing to unpack .../6-kubectl_1.23.3-00_amd64.deb ...
+Unpacking kubectl (1.23.3-00) ...
+Selecting previously unselected package kubeadm.
+Preparing to unpack .../7-kubeadm_1.23.3-00_amd64.deb ...
+Unpacking kubeadm (1.23.3-00) ...
+Setting up conntrack (1:1.4.5-2) ...
+Setting up kubectl (1.23.3-00) ...
+Setting up ebtables (2.0.11-3build1) ...
+Setting up socat (1.7.3.3-2) ...
+Setting up cri-tools (1.19.0-00) ...
+Setting up kubernetes-cni (0.8.7-00) ...
+Setting up kubelet (1.23.3-00) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/kubelet.service → /lib/systemd/system/kubelet.service.
+Setting up kubeadm (1.23.3-00) ...
+Processing triggers for man-db (2.9.1-1) ...
+root@workernode:~# apt-mark hold kubeadm kubelet kubectl
+kubeadm set on hold.
+kubelet set on hold.
+kubectl set on hold.
+root@workernode:~# kubeadm version
+kubeadm version: &version.Info{Major:"1", Minor:"23", GitVersion:"v1.23.3", GitCommit:"816c97ab8cff8a1c72eccca1026f7820e93e0d25", GitTreeState:"clean", BuildDate:"2022-01-25T21:24:08Z", GoVersion:"go1.17.6", Compiler:"gc", Platform:"linux/amd64"}
+root@workernode:~# swapoff -a
+root@workernode:~# hostnamectl set-hostname worker1
+root@workernode:~#  apt-get update
+Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal InRelease
+Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-backports InRelease
+Hit:5 http://security.ubuntu.com/ubuntu focal-security InRelease
+Hit:4 https://packages.cloud.google.com/apt kubernetes-xenial InRelease
+Reading package lists... Done
+root@workernode:~# kubeadm join 172.31.82.66:6443 --token drzixn.snq5lku8fd1mjcw6 --discovery-token-ca-cert-hash sha256:09263b1538cb007aef4aa9d2473a4115dfe4fe49f34820f42dc365e2dbade55a
+[preflight] Running pre-flight checks
+[preflight] Reading configuration from the cluster...
+[preflight] FYI: You can look at this config file with 'kubectl -n kube-system get cm kubeadm-config -o yaml'
+W0216 09:27:14.144772  262258 utils.go:69] The recommended value for "resolvConf" in "KubeletConfiguration" is: /run/systemd/resolve/resolv.conf; the provided value is: /run/systemd/resolve/resolv.conf
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[kubelet-start] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+[kubelet-start] Starting the kubelet
+[kubelet-start] Waiting for the kubelet to perform the TLS Bootstrap...
+
+This node has joined the cluster:
+* Certificate signing request was sent to apiserver and a response was received.
+* The Kubelet was informed of the new secure connection details.
+
+Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
+
+root@workernode:~#
+login as: ubuntu
+Authenticating with public key "imported-openssh-key"
+Welcome to Ubuntu 20.04.3 LTS (GNU/Linux 5.11.0-1022-aws x86_64)

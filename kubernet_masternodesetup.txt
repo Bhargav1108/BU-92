@@ -1,0 +1,214 @@
+root@master-node:/home/ubuntu# kubectl apply -f calico.yaml                                                                           error: the path "calico.yaml" does not exist
+root@master-node:/home/ubuntu# kubectl get nodes
+NAME          STATUS     ROLES                  AGE    VERSION
+master-node   Ready      control-plane,master   167m   v1.23.3
+worker-node   NotReady   <none>                 105m   v1.23.3
+worker1       Ready      <none>                 15m    v1.23.3
+workernode    NotReady   <none>                 50m    v1.23.3
+root@master-node:/home/ubuntu#
+login as: ubuntu
+Authenticating with public key "imported-openssh-key"
+Welcome to Ubuntu 20.04.3 LTS (GNU/Linux 5.11.0-1022-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ System information disabled due to load higher than 2.0
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+72 updates can be applied immediately.
+47 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+
+Last login: Wed Feb 16 09:07:58 2022 from 103.10.224.206
+ubuntu@master-node:~$ sudo su
+root@master-node:/home/ubuntu# curl https://projectcalico.docs.tigera.io/manifests/                                                   calico.yaml -O
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  212k  100  212k    0     0  1021k      0 --:--:-- --:--:-- --:--:-- 1021k
+root@master-node:/home/ubuntu# kubectl apply -f calico.yaml
+configmap/calico-config configured
+customresourcedefinition.apiextensions.k8s.io/bgpconfigurations.crd.projectcalico.o                                                   rg created
+customresourcedefinition.apiextensions.k8s.io/bgppeers.crd.projectcalico.org create                                                   d
+customresourcedefinition.apiextensions.k8s.io/blockaffinities.crd.projectcalico.org                                                    created
+customresourcedefinition.apiextensions.k8s.io/caliconodestatuses.crd.projectcalico.                                                   org created
+customresourcedefinition.apiextensions.k8s.io/clusterinformations.crd.projectcalico                                                   .org created
+customresourcedefinition.apiextensions.k8s.io/felixconfigurations.crd.projectcalico                                                   .org created
+customresourcedefinition.apiextensions.k8s.io/globalnetworkpolicies.crd.projectcali                                                   co.org created
+customresourcedefinition.apiextensions.k8s.io/globalnetworksets.crd.projectcalico.o                                                   rg created
+customresourcedefinition.apiextensions.k8s.io/hostendpoints.crd.projectcalico.org c                                                   reated
+customresourcedefinition.apiextensions.k8s.io/ipamblocks.crd.projectcalico.org crea                                                   ted
+customresourcedefinition.apiextensions.k8s.io/ipamconfigs.crd.projectcalico.org cre                                                   ated
+customresourcedefinition.apiextensions.k8s.io/ipamhandles.crd.projectcalico.org cre                                                   ated
+customresourcedefinition.apiextensions.k8s.io/ippools.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/ipreservations.crd.projectcalico.org                                                    created
+customresourcedefinition.apiextensions.k8s.io/kubecontrollersconfigurations.crd.pro                                                   jectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/networkpolicies.crd.projectcalico.org                                                    created
+customresourcedefinition.apiextensions.k8s.io/networksets.crd.projectcalico.org cre                                                   ated
+clusterrole.rbac.authorization.k8s.io/calico-kube-controllers configured
+clusterrolebinding.rbac.authorization.k8s.io/calico-kube-controllers unchanged
+clusterrole.rbac.authorization.k8s.io/calico-node configured
+clusterrolebinding.rbac.authorization.k8s.io/calico-node unchanged
+daemonset.apps/calico-node configured
+serviceaccount/calico-node unchanged
+deployment.apps/calico-kube-controllers configured
+serviceaccount/calico-kube-controllers unchanged
+Warning: policy/v1beta1 PodDisruptionBudget is deprecated in v1.21+, unavailable in                                                    v1.25+; use policy/v1 PodDisruptionBudget
+poddisruptionbudget.policy/calico-kube-controllers created
+root@master-node:/home/ubuntu# kubectl get all --namespace-list
+error: unknown flag: --namespace-list
+See 'kubectl get --help' for usage.
+root@master-node:/home/ubuntu# kubectl get pods --all-namespaces                                                                      NAMESPACE     NAME                                       READY   STATUS                                                                 RESTARTS         AGE
+kube-system   calico-kube-controllers-566dc76669-bsjpp   1/1     Running                                                                0                43s
+kube-system   calico-node-jjmj7                          0/1     Running                                                                0                58s
+kube-system   calico-node-ntqf6                          0/1     Init:1/3                                                               0                58s
+kube-system   calico-node-pv6qm                          0/1     Pending                                                                0                58s
+kube-system   calico-node-tttmj                          0/1     Pending                                                                0                58s
+kube-system   coredns-64897985d-b4lfl                    0/1     ContainerCreating                                                      0                3h14m
+kube-system   coredns-64897985d-p7w24                    0/1     ContainerCreating                                                      0                3h14m
+kube-system   etcd-master-node                           1/1     Running                                                                1 (3h10m ago)    3h14m
+kube-system   kube-apiserver-master-node                 1/1     Running                                                                1 (3h10m ago)    3h14m
+kube-system   kube-controller-manager-master-node        1/1     Running                                                                1 (3h10m ago)    3h14m
+kube-system   kube-flannel-ds-b5xqn                      0/1     Error                                                                  11 (66m ago)     76m
+kube-system   kube-flannel-ds-cxlvh                      0/1     CrashLoopBackOff                                                       13 (28s ago)     42m
+kube-system   kube-flannel-ds-k7jqj                      0/1     CrashLoopBackOff                                                       13 (100m ago)    132m
+kube-system   kube-flannel-ds-stgdk                      0/1     CrashLoopBackOff                                                       39 (4m19s ago)   3h11m
+kube-system   kube-proxy-6z6tz                           1/1     Running                                                                1 (3h10m ago)    3h14m
+kube-system   kube-proxy-br8xc                           1/1     Running                                                                0                42m
+kube-system   kube-proxy-fnzdh                           1/1     Running                                                                1 (125m ago)     132m
+kube-system   kube-proxy-snt78                           1/1     Running                                                                0                76m
+kube-system   kube-scheduler-master-node                 1/1     Running                                                                1 (3h10m ago)    3h14m
+root@master-node:/home/ubuntu# kubectl apply -f https://raw.githubusercontent.com/c                                                   oreos/flannel/master/Documentation/kube-flannel.yml
+Warning: policy/v1beta1 PodSecurityPolicy is deprecated in v1.21+, unavailable in v                                                   1.25+
+podsecuritypolicy.policy/psp.flannel.unprivileged configured
+clusterrole.rbac.authorization.k8s.io/flannel unchanged
+clusterrolebinding.rbac.authorization.k8s.io/flannel unchanged
+serviceaccount/flannel unchanged
+configmap/kube-flannel-cfg unchanged
+daemonset.apps/kube-flannel-ds unchanged
+root@master-node:/home/ubuntu# curl https://docs.projectcalico.org/manifests/calico                                                   -typha.yaml -o calico.yaml
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  216k  100  216k    0     0   683k      0 --:--:-- --:--:-- --:--:--  681k
+root@master-node:/home/ubuntu# kubectl apply -f calico.yaml
+configmap/calico-config configured
+customresourcedefinition.apiextensions.k8s.io/bgpconfigurations.crd.projectcalico.o                                                   rg configured
+customresourcedefinition.apiextensions.k8s.io/bgppeers.crd.projectcalico.org config                                                   ured
+customresourcedefinition.apiextensions.k8s.io/blockaffinities.crd.projectcalico.org                                                    configured
+customresourcedefinition.apiextensions.k8s.io/caliconodestatuses.crd.projectcalico.                                                   org configured
+customresourcedefinition.apiextensions.k8s.io/clusterinformations.crd.projectcalico                                                   .org configured
+customresourcedefinition.apiextensions.k8s.io/felixconfigurations.crd.projectcalico                                                   .org configured
+customresourcedefinition.apiextensions.k8s.io/globalnetworkpolicies.crd.projectcali                                                   co.org configured
+customresourcedefinition.apiextensions.k8s.io/globalnetworksets.crd.projectcalico.o                                                   rg configured
+customresourcedefinition.apiextensions.k8s.io/hostendpoints.crd.projectcalico.org c                                                   onfigured
+customresourcedefinition.apiextensions.k8s.io/ipamblocks.crd.projectcalico.org conf                                                   igured
+customresourcedefinition.apiextensions.k8s.io/ipamconfigs.crd.projectcalico.org con                                                   figured
+customresourcedefinition.apiextensions.k8s.io/ipamhandles.crd.projectcalico.org con                                                   figured
+customresourcedefinition.apiextensions.k8s.io/ippools.crd.projectcalico.org configu                                                   red
+customresourcedefinition.apiextensions.k8s.io/ipreservations.crd.projectcalico.org                                                    configured
+customresourcedefinition.apiextensions.k8s.io/kubecontrollersconfigurations.crd.pro                                                   jectcalico.org configured
+customresourcedefinition.apiextensions.k8s.io/networkpolicies.crd.projectcalico.org                                                    configured
+customresourcedefinition.apiextensions.k8s.io/networksets.crd.projectcalico.org con                                                   figured
+clusterrole.rbac.authorization.k8s.io/calico-kube-controllers unchanged
+clusterrolebinding.rbac.authorization.k8s.io/calico-kube-controllers unchanged
+clusterrole.rbac.authorization.k8s.io/calico-node unchanged
+clusterrolebinding.rbac.authorization.k8s.io/calico-node unchanged
+service/calico-typha created
+deployment.apps/calico-typha created
+Warning: policy/v1beta1 PodDisruptionBudget is deprecated in v1.21+, unavailable in                                                    v1.25+; use policy/v1 PodDisruptionBudget
+poddisruptionbudget.policy/calico-typha created
+daemonset.apps/calico-node configured
+serviceaccount/calico-node unchanged
+deployment.apps/calico-kube-controllers unchanged
+serviceaccount/calico-kube-controllers unchanged
+poddisruptionbudget.policy/calico-kube-controllers configured
+root@master-node:/home/ubuntu#
+login as: ubuntu
+Authenticating with public key "imported-openssh-key"
+Welcome to Ubuntu 20.04.3 LTS (GNU/Linux 5.11.0-1022-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Wed Feb 16 10:53:58 UTC 2022
+
+  System load:  0.29              Users logged in:          1
+  Usage of /:   62.6% of 7.69GB   IPv4 address for docker0: 172.17.0.1
+  Memory usage: 30%               IPv4 address for eth0:    172.31.82.66
+  Swap usage:   0%                IPv4 address for tunl0:   192.168.77.128
+  Processes:    184
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+72 updates can be applied immediately.
+47 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+
+Last login: Wed Feb 16 10:07:33 2022 from 103.10.224.206
+ubuntu@master-node:~$ sudo su
+root@master-node:/home/ubuntu# kubectl get pods --namespace-list
+error: unknown flag: --namespace-list
+See 'kubectl get --help' for usage.
+root@master-node:/home/ubuntu# kubectl get pods --namespace-ls
+error: unknown flag: --namespace-ls
+See 'kubectl get --help' for usage.
+root@master-node:/home/ubuntu# kubectl get pods --namespace-list
+error: unknown flag: --namespace-list
+See 'kubectl get --help' for usage.
+root@master-node:/home/ubuntu# kubectl get pods --namespace-ls
+error: unknown flag: --namespace-ls
+See 'kubectl get --help' for usage.
+root@master-node:/home/ubuntu# kubectl get pods --all-namespaces                                                                      NAMESPACE     NAME                                       READY   STATUS                                                                RESTARTS         AGE
+kube-system   calico-kube-controllers-566dc76669-bsjpp   1/1     Running                                                               0                45m
+kube-system   calico-node-jjmj7                          1/1     Running                                                               0                46m
+kube-system   calico-node-nkmvc                          1/1     Running                                                               0                43m
+kube-system   calico-node-rvp49                          0/1     Pending                                                               0                43m
+kube-system   calico-node-vc6hh                          0/1     Pending                                                               0                43m
+kube-system   calico-typha-6c88886847-jp82g              1/1     Running                                                               0                43m
+kube-system   coredns-64897985d-b4lfl                    1/1     Running                                                               0                3h59m
+kube-system   coredns-64897985d-p7w24                    1/1     Running                                                               0                3h59m
+kube-system   etcd-master-node                           1/1     Running                                                               1 (3h55m ago)    3h59m
+kube-system   kube-apiserver-master-node                 1/1     Running                                                               1 (3h55m ago)    3h59m
+kube-system   kube-controller-manager-master-node        1/1     Running                                                               1 (3h55m ago)    3h59m
+kube-system   kube-flannel-ds-b5xqn                      0/1     Error                                                                 11 (111m ago)    122m
+kube-system   kube-flannel-ds-cxlvh                      0/1     CrashLoopBackOff                                                      21 (4m58s ago)   87m
+kube-system   kube-flannel-ds-k7jqj                      0/1     CrashLoopBackOff                                                      13 (146m ago)    177m
+kube-system   kube-flannel-ds-stgdk                      0/1     CrashLoopBackOff                                                      48 (3m7s ago)    3h57m
+kube-system   kube-proxy-6z6tz                           1/1     Running                                                               1 (3h55m ago)    3h59m
+kube-system   kube-proxy-br8xc                           1/1     Running                                                               0                87m
+kube-system   kube-proxy-fnzdh                           1/1     Running                                                               1 (170m ago)     177m
+kube-system   kube-proxy-snt78                           1/1     Running                                                               0                122m
+kube-system   kube-scheduler-master-node                 1/1     Running                                                               1 (3h55m ago)    3h59m
+root@master-node:/home/ubuntu# kubectl get pods --all-namespaces
+NAMESPACE     NAME                                       READY   STATUS             RESTARTS        AGE
+kube-system   calico-kube-controllers-566dc76669-bsjpp   1/1     Running            0               46m
+kube-system   calico-node-jjmj7                          1/1     Running            0               47m
+kube-system   calico-node-nkmvc                          1/1     Running            0               44m
+kube-system   calico-node-rvp49                          0/1     Pending            0               44m
+kube-system   calico-node-vc6hh                          0/1     Pending            0               44m
+kube-system   calico-typha-6c88886847-jp82g              1/1     Running            0               44m
+kube-system   coredns-64897985d-b4lfl                    1/1     Running            0               4h
+kube-system   coredns-64897985d-p7w24                    1/1     Running            0               4h
+kube-system   etcd-master-node                           1/1     Running            1 (3h56m ago)   4h
+kube-system   kube-apiserver-master-node                 1/1     Running            1 (3h56m ago)   4h
+kube-system   kube-controller-manager-master-node        1/1     Running            1 (3h56m ago)   4h
+kube-system   kube-flannel-ds-b5xqn                      0/1     Error              11 (112m ago)   122m
+kube-system   kube-flannel-ds-cxlvh                      0/1     CrashLoopBackOff   22 (45s ago)    88m
+kube-system   kube-flannel-ds-k7jqj                      0/1     CrashLoopBackOff   13 (147m ago)   178m
+kube-system   kube-flannel-ds-stgdk                      0/1     CrashLoopBackOff   48 (4m3s ago)   3h58m
+kube-system   kube-proxy-6z6tz                           1/1     Running            1 (3h56m ago)   4h
+kube-system   kube-proxy-br8xc                           1/1     Running            0               88m
+kube-system   kube-proxy-fnzdh                           1/1     Running            1 (171m ago)    178m
+kube-system   kube-proxy-snt78                           1/1     Running            0               122m
+kube-system   kube-scheduler-master-node                 1/1     Running            1 (3h56m ago)   4h

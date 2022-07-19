@@ -1,0 +1,27 @@
+
+peering connection ( to access the another region instance)
+
+1) create vpc and route table and subnet and gateway 
+
+2) attach vpc to route table and gateway to vpc 
+
+3) add subnet in route table routes 
+
+
+do same as in another region 
+
+and create 2 instances on in one region (north verginia) 
+
+adn another one is (ohio)
+
+
+then copy the cidr and vpc id from north verginia instance and 
+add to the route table routes in ohio beofre that give the 
+ohio vpc id to make peering connection . 
+
+after that give ohio region vpc id and cidr in north verginia 
+route table routes 
+
+
+then create the peering connection and accept the request at ohio 
+and try to access using rdp client.

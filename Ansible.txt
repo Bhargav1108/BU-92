@@ -1,0 +1,314 @@
+
+Encaptulating the hosts with names 
+
+============================================
+
+ubuntu@ip-172-31-80-78:~$ cd /etc/ansible/
+
+
+ubuntu@ip-172-31-80-78:/etc/ansible$ vi hosts
+
+## just type the host like below 
+	client2 ansible_ssh_host=3.83.30.40
+
+## if u don't want like above just leave it as ip address
+	3.83.30.40
+
+ubuntu@ip-172-31-80-78:/etc/ansible$ cat hosts
+
+
+##****************** virtual machine ****************************
+client1 ansible_ssh_host=52.90.87.92
+
+##****************** virtual machine ****************************
+
+ubuntu@ip-172-31-80-78:/etc/ansible$ vi hosts
+
+
+## ********************** virtual machine 1*************************
+client2 ansible_ssh_host=3.83.30.40
+
+
+ubuntu@ip-172-31-80-78:~$ ansible all --list-host
+  hosts (2):
+    client1
+    client2
+
+====================================================================
+
+1) Creating our first ansible playbook to install on the host machine
+
+---------------------------------------------------------------------
+
+# create the file with .yaml extension
+
+ubuntu@ip-172-31-80-78:~$ vi install.yaml        
+
+# show the playbook code 
+
+ubuntu@ip-172-31-80-78:~$ cat install.yaml
+
+# here is the yaml code for install 
+
+	- name: install the git on hosts machines
+  	  hosts: all
+  	  become: true
+  	  tasks:
+    	    - name: install the package
+      	      apt:
+        	name: git
+
+#to check the syntax whether it contains erros or not if we have any errors then it would show here other wise just printing the playbook
+
+ubuntu@ip-172-31-80-78:~$ ansible-playbook --syntax-check install.yaml
+
+playbook: install.yaml    // it means we don't have any erros
+
+# here we have to run the file with ansible and it shows the output with okk see below
+
+ubuntu@ip-172-31-80-78:~$ ansible-playbook install.yaml
+
+PLAY [install the git on hosts machines] *********************************************************************************
+
+TASK [Gathering Facts] ***************************************************************************************************
+ok: [3.95.199.212]
+ok: [3.80.212.29]
+
+TASK [install the package] ***********************************************************************************************
+ok: [3.80.212.29]
+changed: [3.95.199.212]
+
+PLAY RECAP ***************************************************************************************************************
+3.80.212.29                : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+3.95.199.212               : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+
+-----------------------------------------------------------------
+
+3) install apache2 on client server using server 
+
+
+ubuntu@ip-172-31-80-78:~/server$ vi apache_install.yaml
+
+ubuntu@ip-172-31-80-78:~/server$ cat apache_install.yaml
+- name: install the git on hosts machines
+  hosts: all
+  become: 'yes'
+  tasks:
+    - name: install the package
+      apt:
+        name: apache2-bin
+
+ubuntu@ip-172-31-80-78:~/server$ ansible-playbook --syntax-check apache_install.yaml
+
+playbook: apache_install.yaml
+
+ubuntu@ip-172-31-80-78:~/server$ ansible-playbook apache_install.yaml           
+PLAY [install the git on hosts machines] ***************************************
+
+TASK [Gathering Facts] *********************************************************
+The authenticity of host '52.90.87.92 (52.90.87.92)' can't be established.
+ECDSA key fingerprint is SHA256:bE4rZOkAAi0/YAeVHTrQRFNAf3DukH4CM55tUzRnpsg.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? ok: [3.83.30.40]
+yes
+ok: [52.90.87.92]
+
+TASK [install the package] *****************************************************
+changed: [3.83.30.40]
+changed: [52.90.87.92]
+
+PLAY RECAP *********************************************************************
+3.83.30.40                 : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+52.90.87.92                : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+========================================================================
+
+TO check whether the apache2 server installed on client machine 
+
+========================================================================
+
+step1:- connect to client machine using remote ssh 
+
+ubuntu@ip-172-31-80-78:~/server$ ssh ubuntu@3.83.30.40
+
+/*** 
+      before connect my ip privte machine address was this : ubuntu@ip-172-31-80-78
+	
+      Then i connected to client machine using ssh protocol : ssh ubuntu@3.83.30.40 
+     
+      Then it should connected to the client ubuntu below u can see the client machine address also changed 
+
+**/
+
+Welcome to Ubuntu 20.04.3 LTS (GNU/Linux 5.11.0-1028-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Mon Feb 14 04:07:07 UTC 2022
+
+  System load:  0.0               Processes:             103
+  Usage of /:   26.1% of 7.69GB   Users logged in:       0
+  Memory usage: 21%               IPv4 address for eth0: 172.31.82.128
+  Swap usage:   0%
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+14 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+
+Last login: Mon Feb 14 04:01:55 2022 from 34.239.102.183
+ubuntu@ip-172-31-82-128:~$ apache2 -v
+Server version: Apache/2.4.41 (Ubuntu)
+Server built:   2022-01-05T14:49:56
+
+  ## here u can check the apche server installed or not by just typing the command : apache2 -v
+  
+  ## It show the apache2 version if installed other vice it should return not found
+
+  if you want to exit form the client just type command exit
+
+ubuntu@ip-172-31-82-128:~$ exit
+logout
+Connection to 3.83.30.40 closed.
+
+=======================================================================================
+
+creating vault password 
+
+===================================================
+
+## below is the command for creating vault password 
+
+ubuntu@ip-172-31-80-78:~/server$ ansible-vault create pass_file  
+New Vault password:
+Confirm New Vault password:
+
+### Whatever the password u entered it should be encrypted using AES256 algorithm u can see the encrypted file below 
+
+ubuntu@ip-172-31-80-78:~/server$ cat pass_file
+$ANSIBLE_VAULT;1.1;AES256
+64303964633735356333393337386633653662303832666236313230613035386434393030383130
+6463323034656135633561346536363265303362666561390a363334373261613561633164393531
+61383734656263303336653431636531373263353764363033393164343163346434393663636232
+6264663364383066360a303636323439653830663834613736396362376338303636366133353764
+3263
+
+
+## the below one asks for the vault password before running the playbook
+
+ubuntu@ip-172-31-80-78:~/server$ ansible-playbook --ask-vault-pass second.yaml
+Vault password:
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [52.90.87.92]
+ok: [3.83.30.40]
+
+TASK [package] *****************************************************************
+skipping: [52.90.87.92]
+skipping: [3.83.30.40]
+
+TASK [package] *****************************************************************
+skipping: [52.90.87.92]
+skipping: [3.83.30.40]
+
+PLAY RECAP *********************************************************************
+3.83.30.40                 : ok=1    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0
+52.90.87.92                : ok=1    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0
+
+=====================================================================================================================
+
+calling the ansilble facts 
+
+--------------------
+
+ubuntu@ip-172-31-80-78:~/server$ vi call_facts.yaml
+
+ubuntu@ip-172-31-80-78:~/server$ cat call_facts.yaml
+- name: calling the facts
+  hosts: all
+  become: true
+  tasks:
+    - name: dispaly the hosts info
+      debug:
+        msg: "{{ansible_hostname}}"
+
+## checking the syntax whether it has errors or not
+
+ubuntu@ip-172-31-80-78:~/server$ ansible-playbook --syntax-check call_facts.yaml
+playbook: call_facts.yaml
+
+## running the playbook 
+
+ubuntu@ip-172-31-80-78:~/server$ ansible-playbook call_facts.yaml               
+PLAY [calling the facts] *******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [52.90.87.92]
+ok: [3.83.30.40]
+
+TASK [dispaly the hosts info] **************************************************
+ok: [52.90.87.92] => {
+    "msg": "ip-172-31-80-133"
+}
+ok: [3.83.30.40] => {
+    "msg": "ip-172-31-82-128"
+}
+
+## here is displays the system info by default hostname ( private ip address ) 
+
+PLAY RECAP *********************************************************************
+3.83.30.40                 : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+52.90.87.92                : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+=================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
